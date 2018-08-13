@@ -277,12 +277,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/10/First-Blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/10/First-Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨哲瑞">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/uploads/touxiang.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -296,7 +296,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/10/First-Blog/" itemprop="url">
+                <a class="post-title-link" href="/2017/06/10/First-Blog/" itemprop="url">
                   First-Blog
                 </a>
               
@@ -323,7 +323,7 @@
                 
               
 
-              <time title="Post created: 2018-08-10 17:29:46" itemprop="dateCreated datePublished" datetime="2018-08-10T17:29:46+08:00">2018-08-10</time>
+              <time title="Post created: 2017-06-10 17:29:46" itemprop="dateCreated datePublished" datetime="2017-06-10T17:29:46+08:00">2017-06-10</time>
             
 
             
@@ -340,7 +340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-08-13 08:48:19" itemprop="dateModified" datetime="2018-08-13T08:48:19+08:00">2018-08-13</time>
+                <time title="Updated at: 2018-08-13 16:23:28" itemprop="dateModified" datetime="2018-08-13T16:23:28+08:00">2018-08-13</time>
               
             
           </span>
@@ -348,6 +348,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/10/First-Blog/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2017/06/10/First-Blog/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -445,6 +455,10 @@
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/touxiang.jpg"
+                alt="杨哲瑞" />
             
               <p class="site-author-name" itemprop="name">杨哲瑞</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -637,6 +651,31 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'ICI8D8d6xumtKS5vIBTmtmYi-gzGzoHsz',
+        appKey: 'MnHS8hUVh26gb1Dx1MrSV6MV',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
