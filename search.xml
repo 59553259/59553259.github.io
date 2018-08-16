@@ -4,5 +4,11 @@
     <title><![CDATA[First-Blog]]></title>
     <url>%2F2017%2F06%2F10%2FFirst-Blog%2F</url>
     <content type="text"><![CDATA[Hello！]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
 </search>
