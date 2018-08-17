@@ -5,21 +5,10 @@
     <url>%2F2018%2F08%2F17%2FMarkdown%2F</url>
     <content type="text"><![CDATA[前言在使用Hexo搭建博客系统后，通过hexo new XXX创建一个新的博客文章，编写博客内容所使用的模板为.md文件对此，有必要了解一下关于Markdown的基本语法，以提高写作效率。 Markdown介绍Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。优点： 纯文本格式，故可以用任何编辑器打开并编辑 语法简介易懂，具有很好的可读性 转化格式方便，可以轻松转化为Html、PPT、Word等格式文件 基本语法介绍标题在 Markdown 中，只需在文本前面加上#即可表示标题，标题总共六级同理，二级标题、三级标题、四级标题、五级标题和六级标题都只需要添加相应数量的#即可，标题字号便会相应降低。例如：123456# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题 注：#和标题之间建议保留一个字符的空格。 字体 加粗 :将要加粗的文字用两个*号包起来 **Bold** —– Bold 斜体 :将要倾斜的文字用一个*号包起来 斜体加粗 :将要倾斜加粗的文字用三个*号包起来 删除线 : 将要加删除线的文字用两个~~号包起来 引用 引用 :在引用的文字前加&gt;即可例如： &gt; 引用内容 引用内容 分割线 分割线 (HR) :三个或者三个以上的-或者*例如 : --- *** 链接 链接 :[超链接名](超链接地址)例如 :[百度](https://www.baidu.com/)显示为 :百度 图片12345![alt](address &quot;title&quot;)alt是指显示在图片下面的文字 address是指图片的地址title是指当鼠标移到图片上时显示的内容，title可有可无 例如 :![头像](source/uploads/touxiang.jpg) 列表无序列表语法：无序列表用- + *任何一种都可以例如 :12- 有序列表- 无序列表 显示为 : 有序列表 无序列表有序列表语法：数字加点例如 : 121.有序列表 2.无序列表 显示为：1.有序列表2.无序列表 列表嵌套在下一级的-符号前敲四个空格例如 :1234- 一级列表 - 二级列表 - 二级列表 - 二级列表 显示为： 一级列表 二级列表 二级列表 二级列表 表格语法为 :1234表头|表头|表头---|:--:|---:内容|内容|内容内容|内容|内容 第二行分割表头和内容文字默认居左--- 表示文字居左：--：表示文字居中----：表示文字居右显示为： 表头 表头 表头 内容 内容 内容 内容 内容 内容 内嵌代码单行代码：将代码用一个反引号包起来alert(&#39;Hello World&#39;); 多行代码：将代码用三个反引号包起来123alert(&apos;Hello World&apos;); alert(&apos;Hello World&apos;); alert(&apos;Hello World&apos;); 换行 段落 : 段落之间空一行 换行 : 一行结束时输入两个空格]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Markdown</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[First-Blog]]></title>
-    <url>%2F2017%2F06%2F10%2FFirst-Blog%2F</url>
-    <content type="text"><![CDATA[Hello！]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
 </search>
