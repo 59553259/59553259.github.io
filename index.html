@@ -352,6 +352,243 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/vueRouter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨哲瑞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Naxzer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/vueRouter/" itemprop="url">
+                  vue-router导航守卫
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-18 09:47:56" itemprop="dateCreated datePublished" datetime="2018-08-18T09:47:56+08:00">2018-08-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-21 15:32:10" itemprop="dateModified" datetime="2018-08-21T15:32:10+08:00">2018-08-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="导航守卫"><a href="#导航守卫" class="headerlink" title="导航守卫"></a>导航守卫</h4><p><code>vue-router</code> 提供的导航守卫主要用来通过跳转或取消的方式守卫导航,比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。对此有多种方法植入路由导航过程中：全局的, 单个路由独享的, 或者组件级的。<br>记住参数或查询的改变并不会触发进入/离开的导航守卫。你可以通过观察 $route 对象来应对这些变化，或使用 beforeRouteUpdate 的组件内守卫。</p>
+<hr>
+<h4 id="全局守卫"><a href="#全局守卫" class="headerlink" title="全局守卫"></a>全局守卫</h4><p>vue-router全局有三个守卫：</p>
+<ul>
+<li>router.beforeEach 全局前置守卫 进入路由之前</li>
+<li>router.beforeResolve 全局解析守卫(2.5.0+) 在beforeRouteEnter调用之后调用</li>
+<li>router.afterEach 全局后置钩子 进入路由之后<br>使用方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import router from &apos;./router&apos;; // 引入路由</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123; </span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br><span class="line">router.beforeResolve((to, from, next) =&gt; &#123;</span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br><span class="line">router.afterEach((to, from) =&gt; &#123;</span><br><span class="line">  console.log(&apos;afterEach 全局后置钩子&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>守卫是异步解析执行，此时导航在所有守卫 resolve 完之前一直处于等待中。</p>
+</blockquote>
+<ul>
+<li>每个守卫方法接收三个参数：<ul>
+<li>to  即将要进入的目标 路由对象</li>
+<li>from  当前导航正要离开的路由</li>
+<li>next()  这个参数是个函数，且必须调用，否则钩子就不会被 resolved,不能进入路由(页面空白)<ul>
+<li>next(): 进行管道中的下一个钩子。如果全部钩子执行完了，则导航的状态就是 confirmed (确认的)。</li>
+<li>next(false): 中断当前的导航。如果浏览器的 URL 改变了 (可能是用户手动或者浏览器后退按钮)，那么 URL 地址会重置到 from 路由对应的地址</li>
+<li>next(‘/‘) 或者 next({ path: ‘/‘ }): 跳转到一个不同的地址。当前的导航被中断，然后进行一个新的导航。你可以向 next 传递任意位置对象，且允许设置诸如 replace: true、name: ‘home’ 之类的选项以及任何用在 router-link 的 to prop 或 router.push 中的选项。</li>
+<li>next(error): (2.4.0+) 如果传入 next 的参数是一个 Error 实例，则导航会被终止且该错误会被传递给 router.onError() 注册过的回调。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="路由独享守卫"><a href="#路由独享守卫" class="headerlink" title="路由独享守卫"></a>路由独享守卫</h4><p>你可以在路由配置上直接定义 beforeEnter 守卫：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/foo&apos;,</span><br><span class="line">      component: Foo,</span><br><span class="line">      beforeEnter: (to, from, next) =&gt; &#123;</span><br><span class="line">        // ...</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这些守卫与全局守卫的方法参数是一样的,其调用顺序在全局前置守卫后面，不会被全局守卫所覆盖</p>
+</blockquote>
+<hr>
+<h4 id="组件内的守卫"><a href="#组件内的守卫" class="headerlink" title="组件内的守卫"></a>组件内的守卫</h4><p>你可以在路由组件内直接定义以下路由导航守卫：</p>
+<ul>
+<li>beforeRouteEnter 进入路由前</li>
+<li>beforeRouteUpdate (2.2 新增)路由复用同一个组件时</li>
+<li>beforeRouteLeave 离开当前路由时<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const Foo = &#123;</span><br><span class="line">  template: `...`,</span><br><span class="line">  beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">    // 在渲染该组件的对应路由被 confirm 前调用</span><br><span class="line">    // 不！能！获取组件实例 `this`</span><br><span class="line">    // 因为当守卫执行前，组件实例还没被创建</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteUpdate (to, from, next) &#123;</span><br><span class="line">    // 在当前路由改变，但是该组件被复用时调用</span><br><span class="line">    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span><br><span class="line">    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span><br><span class="line">    // 可以访问组件实例 `this`</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeRouteLeave (to, from, next) &#123;</span><br><span class="line">    // 导航离开该组件的对应路由时调用</span><br><span class="line">    // 可以访问组件实例 `this`</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>beforeRouteEnter 守卫 不能 访问 this，因为守卫在导航确认前被调用,因此即将登场的新组件还没被创建。</strong><br>不过，你可以通过传一个回调给 next来访问组件实例。在导航被确认的时候执行回调，并且把组件实例作为回调方法的参数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">  next(vm =&gt; &#123;</span><br><span class="line">    // 通过 `vm` 访问组件实例</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>beforeRouteEnter 是支持给 next 传递回调的唯一守卫。<br>对于 beforeRouteUpdate 和 beforeRouteLeave 来说，this 已经可用了，所以不支持传递回调，因为没有必要了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteUpdate (to, from, next) &#123;</span><br><span class="line">  this.name = to.params.name</span><br><span class="line">  next()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>这个离开守卫通常用来禁止用户在还未保存修改前突然离开。该导航可以通过 next(false) 来取消。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteLeave (to, from , next) &#123;</span><br><span class="line">  const answer = window.confirm(&apos;Do you really want to leave? you have unsaved changes!&apos;)</span><br><span class="line">  if (answer) &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    next(false)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="跳转死循环，页面永远空白问题"><a href="#跳转死循环，页面永远空白问题" class="headerlink" title="跳转死循环，页面永远空白问题"></a>跳转死循环，页面永远空白问题</h5><p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  if(登录)&#123;</span><br><span class="line">     next()</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">      next(&#123; name: &apos;login&apos; &#125;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当未登录转到login之后，因为此时的状态仍然还是未登录，所以会一直跳转到login然后死循环，故页面一直显示为空白。<br>解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  if(登录 || to.name === &apos;login&apos;)&#123; // 登录，或者将要前往login页面的时候，就允许进入路由</span><br><span class="line">     next()</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">      next(&#123; name: &apos;login&apos; &#125;); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="完整的导航解析流程"><a href="#完整的导航解析流程" class="headerlink" title="完整的导航解析流程"></a>完整的导航解析流程</h4><ul>
+<li>导航被触发。</li>
+<li>在失活的组件里调用离开守卫。</li>
+<li>调用全局的 beforeEach 守卫。</li>
+<li>在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。</li>
+<li>在路由配置里调用 beforeEnter。</li>
+<li>解析异步路由组件。</li>
+<li>在被激活的组件里调用 beforeRouteEnter。</li>
+<li>调用全局的 beforeResolve 守卫 (2.5+)。</li>
+<li>导航被确认。</li>
+<li>调用全局的 afterEach 钩子。</li>
+<li>触发 DOM 更新。</li>
+<li>用创建好的实例调用 beforeRouteEnter 守卫中传给 next 的回调函数。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  <div>
+  
+</div>
+
+  </article>
+
+
+        
+    
+       
+            
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/less/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -596,7 +833,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-21 14:46:09" itemprop="dateModified" datetime="2018-08-21T14:46:09+08:00">2018-08-21</time>
+                <time title="修改时间：2018-08-21 15:44:58" itemprop="dateModified" datetime="2018-08-21T15:44:58+08:00">2018-08-21</time>
               
             
           </span>
@@ -1107,7 +1344,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -141,7 +141,7 @@
 <meta property="og:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2018-08-21T06:46:09.780Z">
+<meta property="og:updated_time" content="2018-08-21T07:44:58.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue生命周期详解">
 <meta name="twitter:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
@@ -416,7 +416,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-21 14:46:09" itemprop="dateModified" datetime="2018-08-21T14:46:09+08:00">2018-08-21</time>
+                <time title="修改时间：2018-08-21 15:44:58" itemprop="dateModified" datetime="2018-08-21T15:44:58+08:00">2018-08-21</time>
               
             
           </span>
@@ -514,6 +514,13 @@
 <blockquote>
 <p>父子组件的生命周期遵循：<strong>由外到内，再由内到外  </strong></p>
 </blockquote>
+<hr>
+<h4 id="几个常见操作"><a href="#几个常见操作" class="headerlink" title="几个常见操作"></a>几个常见操作</h4><ul>
+<li>ajax请求 ajax请求最好放在created里面，因为此时已经可以访问this了，请求到数据就可以直接放在data里面。</li>
+<li>dom操作 关于dom的操作要放在mounted里面，在mounted前面访问dom会是undefined。</li>
+<li>进入组件时操作可以用created和mounted钩子</li>
+<li>离开的时候用beforeDestory和destroyed钩子(beforeDestory可以访问this，destroyed不可以访问this)</li>
+</ul>
 
       
     </div>
@@ -653,7 +660,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -745,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue的生命周期图示"><span class="nav-number">1.</span> <span class="nav-text">Vue的生命周期图示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue实例和子组件之间的生命周期"><span class="nav-number">2.</span> <span class="nav-text">Vue实例和子组件之间的生命周期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue的生命周期图示"><span class="nav-number">1.</span> <span class="nav-text">Vue的生命周期图示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue实例和子组件之间的生命周期"><span class="nav-number">2.</span> <span class="nav-text">Vue实例和子组件之间的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几个常见操作"><span class="nav-number">3.</span> <span class="nav-text">几个常见操作</span></a></li></ol></div>
             
 
           </div>
