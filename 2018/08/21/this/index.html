@@ -132,27 +132,25 @@
 
 
 
-  <meta name="description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="前言this是Javascript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。一般来说，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象。">
+<meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue生命周期详解">
-<meta property="og:url" content="http://yoursite.com/2018/08/04/newVue/index.html">
+<meta property="og:title" content="JS中this关键字的用法">
+<meta property="og:url" content="http://yoursite.com/2018/08/21/this/index.html">
 <meta property="og:site_name" content="Naxzer">
-<meta property="og:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
+<meta property="og:description" content="前言this是Javascript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。一般来说，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
-<meta property="og:updated_time" content="2018-08-21T07:44:58.647Z">
+<meta property="og:updated_time" content="2018-08-21T14:03:55.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue生命周期详解">
-<meta name="twitter:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
-<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta name="twitter:title" content="JS中this关键字的用法">
+<meta name="twitter:description" content="前言this是Javascript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。一般来说，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/04/newVue/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/21/this/"/>
 
 
 
@@ -162,7 +160,7 @@
   };
 </script>
 
-  <title>Vue生命周期详解 | Naxzer</title>
+  <title>JS中this关键字的用法 | Naxzer</title>
   
 
 
@@ -357,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/04/newVue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨哲瑞">
@@ -374,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue生命周期详解
+          <h1 class="post-title" itemprop="name headline">JS中this关键字的用法
               
             
           </h1>
@@ -399,24 +397,12 @@
                 
               
 
-              <time title="创建时间：2018-08-04 08:47:56" itemprop="dateCreated datePublished" datetime="2018-08-04T08:47:56+08:00">2018-08-04</time>
+              <time title="创建时间：2018-08-21 21:45:02 / 修改时间：22:03:55" itemprop="dateCreated datePublished" datetime="2018-08-21T21:45:02+08:00">2018-08-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-21 15:44:58" itemprop="dateModified" datetime="2018-08-21T15:44:58+08:00">2018-08-21</time>
               
             
           </span>
@@ -433,7 +419,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a></span>
 
                 
                 
@@ -448,8 +434,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/04/newVue/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/04/newVue/" itemprop="commentsCount"></span>
+                <a href="/2018/08/21/this/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/21/this/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -485,41 +471,33 @@
       
 
       
-        <p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等，这个过程就是vue的生命周期。<br>同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。<br><a id="more"></a></p>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>this是Javascript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。<br>一般来说，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上<strong>this的最终指向的是那个调用它的对象</strong>。<br><a id="more"></a></p>
 <hr>
-<h4 id="Vue的生命周期图示"><a href="#Vue的生命周期图示" class="headerlink" title="Vue的生命周期图示"></a>Vue的生命周期图示</h4><p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="Vue生命周期"><br>上图是Vue官方文档上的生命周期图示。<br>由图可以看到在vue一整个的生命周期中会有以下八个钩子函数提供给我们在vue生命周期不同的时刻进行操作：  </p>
-<ul>
-<li><p>beforeCreate（此时date、method和el均没有初始化，可以在此加载loading）  </p>
+<h4 id="this的四种绑定机制"><a href="#this的四种绑定机制" class="headerlink" title="this的四种绑定机制"></a>this的四种绑定机制</h4><ul>
+<li><p>默认绑定<br>规则：在非严格模式下，默认绑定的this指向全局对象，严格模式下this指向undefined</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  console.log(this.a); // this指向全局对象</span><br><span class="line">&#125;</span><br><span class="line">var a = 2;</span><br><span class="line">foo(); // 2</span><br><span class="line">function foo2() &#123;</span><br><span class="line">  &quot;use strict&quot;; // 严格模式this绑定到undefined</span><br><span class="line">  console.log(this.a); </span><br><span class="line">&#125;</span><br><span class="line">foo2(); // TypeError:a undefined</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>created（此时date和method初始化完成，但是DOM节点并没有挂载，判断是否有el节点，如果有则编译template，如果没有则使用vm.$mount创建一个默认节点，此时可以在DOM渲染之前进行数据的初始化和method的自执行等）<br>template参数选项的有无对生命周期的影响。<br>①.如果vue实例对象中有template参数选项，则将其作为模板编译成render函数。<br>②.如果没有template选项，则将外部HTML作为模板编译。<br>③.可以看到template中的模板优先级要高于outer HTML的优先级。<br> render函数选项 &gt; template选项 &gt; outer HTML.  </p>
-</li>
-<li><p>beforeMount（编译模板，并且将此时在el上挂载一个虚拟的DOM节点） </p>
-</li>
-<li><p>mounted（编译模板，且将真实的DOM节点挂载在el上）  </p>
-</li>
-<li><p>beforeUpdate（在数据有更新时，进入此钩子函数，虚拟DOM被重新创建） </p>
-</li>
-<li><p>updated（数据更新完成时，进入此钩子函数）  </p>
-</li>
-<li><p>beforeDestory（组件销毁前调用，此时将组件上的watchers、子组件和事件都移除掉）  </p>
-</li>
-<li><p>destoryed（组件销毁后调用）  </p>
+<li><p>隐式绑定<br>规则：函数在调用位置，是否有上下文对象，如果有，那么this就会隐式绑定到这个对象上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;Oops, global&quot;;</span><br><span class="line">let obj2 = &#123;</span><br><span class="line">  a: 2,</span><br><span class="line">  foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">let obj1 = &#123;</span><br><span class="line">  a: 22,</span><br><span class="line">  obj2: obj2</span><br><span class="line">&#125;;</span><br><span class="line">obj2.foo(); // 2 this指向调用函数的对象</span><br><span class="line">obj1.obj2.foo(); // 2 this指向最后一层调用函数的对象</span><br><span class="line"></span><br><span class="line">// 隐式绑定丢失</span><br><span class="line">let bar = obj2.foo; // bar只是一个函数别名 是obj2.foo的一个引用</span><br><span class="line">bar(); // &quot;Oops, global&quot; - 指向全局</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>一般一个Vue实例初始化时，只会执行前四个钩子函数  </p>
+<p>隐式绑定丢失:函数调用时，并没有上下文对象，只是对函数的引用，所以会导致隐式绑定丢失。</p>
+<ul>
+<li>显式绑定<br>规则：在某个对象上强制调用函数，通过apply、call、bind将函数中的this绑定到指定对象上,从而将this绑定在这个函数上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">let obj = &#123;</span><br><span class="line">    a: 2</span><br><span class="line">&#125;;</span><br><span class="line">foo.call(obj); // 2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </blockquote>
+<ul>
+<li>new绑定(构造函数模式)<br>规则：使用构造调用的时候，this会自动绑定在new期间创建的对象上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo(a) &#123;</span><br><span class="line">  this.a = a; // this绑定到bar上</span><br><span class="line">&#125;</span><br><span class="line">let bar = new foo(2);</span><br><span class="line">console.log(bar.a); // 2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
-<h4 id="Vue实例和子组件之间的生命周期"><a href="#Vue实例和子组件之间的生命周期" class="headerlink" title="Vue实例和子组件之间的生命周期"></a>Vue实例和子组件之间的生命周期</h4><p>在Vue中，由于父元素的template模板嵌套了子元素，因此在编译模板时，会先进入到父元素的template，然后层层递归进行子元素的模板编译。<br>在创建时，父子组件的生命周期是：<br>父组件beforeCreated -&gt; 父组件created -&gt; 父组件beforeMounted -&gt; <strong>子组件beforeCreated -&gt; 子组件created -&gt; 子组件beforeMounted -&gt; 子组件mounted</strong> -&gt; 父组件mounted。<br>在销毁时，父子组件的生命周期是：<br>父组件beforeDestory -&gt;<strong> 子组件beforeDestoryed -&gt; 子组件destoryed</strong> -&gt; 父组件destoryed  </p>
-<blockquote>
-<p>父子组件的生命周期遵循：<strong>由外到内，再由内到外  </strong></p>
-</blockquote>
-<hr>
-<h4 id="几个常见操作"><a href="#几个常见操作" class="headerlink" title="几个常见操作"></a>几个常见操作</h4><ul>
-<li>ajax请求 ajax请求最好放在created里面，因为此时已经可以访问this了，请求到数据就可以直接放在data里面。</li>
-<li>dom操作 关于dom的操作要放在mounted里面，在mounted前面访问dom会是undefined。</li>
-<li>进入组件时操作可以用created和mounted钩子</li>
-<li>离开的时候用beforeDestory和destroyed钩子(beforeDestory可以访问this，destroyed不可以访问this)</li>
+<h4 id="箭头函数的this指向问题"><a href="#箭头函数的this指向问题" class="headerlink" title="箭头函数的this指向问题"></a>箭头函数的this指向问题</h4><p>箭头函数的this指向不会使用上述的四条规则。<br>规则：</p>
+<ul>
+<li>箭头函数中的this继承于它外面第一个不是箭头函数的函数的this指向。</li>
+<li>箭头函数的 this 一旦绑定了上下文，就不会被任何代码改变。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">  return () =&gt; &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">let obj1 = &#123;</span><br><span class="line">  a: 2</span><br><span class="line">&#125;;</span><br><span class="line">let obj2 = &#123;</span><br><span class="line">  a: 22</span><br><span class="line">&#125;;</span><br><span class="line">let bar = foo.call(obj1); // foo this指向obj1</span><br><span class="line">bar.call(obj2); // 输出2 这里执行箭头函数 并试图绑定this指向到obj2</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -541,7 +519,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+            <a href="/tags/JS/" rel="tag"><i class="fa fa-tag"></i> JS</a>
           
         </div>
       
@@ -554,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/29/pageShow/" rel="next" title="从输入域名到页面展示的全过程">
-                <i class="fa fa-chevron-left"></i> 从输入域名到页面展示的全过程
+              <a href="/2018/08/18/vueRouter/" rel="next" title="vue-router导航守卫">
+                <i class="fa fa-chevron-left"></i> vue-router导航守卫
               </a>
             
           </div>
@@ -563,10 +541,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/12/less/" rel="prev" title="Less入门">
-                Less入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -756,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue的生命周期图示"><span class="nav-number">1.</span> <span class="nav-text">Vue的生命周期图示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue实例和子组件之间的生命周期"><span class="nav-number">2.</span> <span class="nav-text">Vue实例和子组件之间的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#几个常见操作"><span class="nav-number">3.</span> <span class="nav-text">几个常见操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this的四种绑定机制"><span class="nav-number">2.</span> <span class="nav-text">this的四种绑定机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#箭头函数的this指向问题"><span class="nav-number">3.</span> <span class="nav-text">箭头函数的this指向问题</span></a></li></ol></div>
             
 
           </div>
