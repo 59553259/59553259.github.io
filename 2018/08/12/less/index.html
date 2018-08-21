@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "15f76dff"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="前言CSS作为一门标记性语言，虽然简单易懂，但毫无逻辑性可言，遭到一些程序员的不喜。随着技术的兴起，为了使CSS富有逻辑性，涌现出了例如Sass、Less之类的预处理语言。它们让CSS彻底变成一门可以使用变量、循环、继承、自定义方法等多种特性的标记语言，逻辑性得以大大增强。Less诞生于2009年，它扩充了CSS语言，增加了诸如变量、混合、函数等功能，让CSS更易维护、方便制作主题、扩充。它没有去">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Less入门">
+<meta property="og:url" content="http://yoursite.com/2018/08/12/less/index.html">
+<meta property="og:site_name" content="Naxzer">
+<meta property="og:description" content="前言CSS作为一门标记性语言，虽然简单易懂，但毫无逻辑性可言，遭到一些程序员的不喜。随着技术的兴起，为了使CSS富有逻辑性，涌现出了例如Sass、Less之类的预处理语言。它们让CSS彻底变成一门可以使用变量、循环、继承、自定义方法等多种特性的标记语言，逻辑性得以大大增强。Less诞生于2009年，它扩充了CSS语言，增加了诸如变量、混合、函数等功能，让CSS更易维护、方便制作主题、扩充。它没有去">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-21T06:46:16.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Less入门">
+<meta name="twitter:description" content="前言CSS作为一门标记性语言，虽然简单易懂，但毫无逻辑性可言，遭到一些程序员的不喜。随着技术的兴起，为了使CSS富有逻辑性，涌现出了例如Sass、Less之类的预处理语言。它们让CSS彻底变成一门可以使用变量、循环、继承、自定义方法等多种特性的标记语言，逻辑性得以大大增强。Less诞生于2009年，它扩充了CSS语言，增加了诸如变量、混合、函数等功能，让CSS更易维护、方便制作主题、扩充。它没有去">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/12/less/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Less入门 | Naxzer</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/59553259" target="_blank" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Naxzer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/less/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杨哲瑞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Naxzer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Less入门
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-12 09:03:38" itemprop="dateCreated datePublished" datetime="2018-08-12T09:03:38+08:00">2018-08-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-21 14:46:16" itemprop="dateModified" datetime="2018-08-21T14:46:16+08:00">2018-08-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/12/less/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/12/less/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>CSS作为一门标记性语言，虽然简单易懂，但毫无逻辑性可言，遭到一些程序员的不喜。随着技术的兴起，为了使CSS富有逻辑性，涌现出了例如Sass、Less之类的预处理语言。它们让CSS彻底变成一门可以使用变量、循环、继承、自定义方法等多种特性的标记语言，逻辑性得以大大增强。<br>Less诞生于2009年，它扩充了CSS语言，增加了诸如变量、混合、函数等功能，让CSS更易维护、方便制作主题、扩充。它没有去掉任何CSS的功能，而是在现有的语法上，增添了许多额外的功能特性。<br>附上Less的官网：<a href="http://lesscss.org/" target="_blank" rel="noopener">Less</a><br><a id="more"></a></p>
+<hr>
+<h4 id="如何使用Less"><a href="#如何使用Less" class="headerlink" title="如何使用Less"></a>如何使用Less</h4><ul>
+<li>本地环境<br>在页面中 引入 Less.js <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet/less&quot; href=&quot;style.less&quot;&gt;</span><br><span class="line">&lt;script src=&quot;less.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注意：link 标签一定要在 Less.js 之前引入，并且 link 标签的 rel 属性要设置为stylesheet/less。<br>less.min.js可以去官网下载，也可以使用CDN<code>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<ul>
+<li>生产环境<br>在命令行,使用npm安装  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g less</span><br><span class="line">$ lessc styles.less &gt; styles.css</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>如果使用Webpack，需配合 less-loader 进行处理</p>
+</blockquote>
+<hr>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li>值变量  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @color: #999;</span><br><span class="line">    @bgColor: skyblue;//不要添加引号</span><br><span class="line">    @width: 50%;</span><br><span class="line">    #wrap &#123;</span><br><span class="line">      color: @color;</span><br><span class="line">      width: @width;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成后的 CSS */</span><br><span class="line">    #wrap &#123;</span><br><span class="line">      color: #999;</span><br><span class="line">      width: 50%;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以 @ 开头定义变量，并且使用时直接键入 @名称。</p>
+<p>在平时工作中，我们就可以把常用的变量封装到一个文件中，这样利于代码组织维护。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@lightPrimaryColor: #c5cae9;</span><br><span class="line">    @textPrimaryColor: #fff;</span><br><span class="line">    @accentColor: rgb(99, 137, 185);</span><br><span class="line">    @primaryTextColor: #646464;</span><br><span class="line">    @secondaryTextColor: #000;</span><br><span class="line">    @dividerColor: #b6b6b6;</span><br><span class="line">    @borderColor: #dadada;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>变量是常量，只能定义一次，不能重复使用。  </p>
+</blockquote>
+<ul>
+<li><p>选择器变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @mySelector: #wrap;</span><br><span class="line">    @Wrap: wrap;</span><br><span class="line">    @&#123;mySelector&#125;&#123; //变量名 必须使用大括号包裹</span><br><span class="line">      color: #999;</span><br><span class="line">      width: 50%;</span><br><span class="line">    &#125;</span><br><span class="line">    .@&#123;Wrap&#125;&#123;</span><br><span class="line">      color:#ccc;</span><br><span class="line">    &#125;</span><br><span class="line">    #@&#123;Wrap&#125;&#123;</span><br><span class="line">      color:#666;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      color: #999;</span><br><span class="line">      width: 50%;</span><br><span class="line">    &#125;</span><br><span class="line">    .wrap&#123;</span><br><span class="line">      color:#ccc;</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      color:#666;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @borderStyle: border-style;</span><br><span class="line">    @Soild:solid;</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      @&#123;borderStyle&#125;: @Soild;//变量名 必须使用大括号包裹</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      border-style:solid;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>url变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line"> @images: &quot;../img&quot;;//需要加引号</span><br><span class="line"> body &#123;</span><br><span class="line">   background: url(&quot;@&#123;images&#125;/dog.png&quot;);//变量名 必须使用大括号包裹</span><br><span class="line"> &#125;</span><br><span class="line">    </span><br><span class="line"> /* 生成的 CSS */</span><br><span class="line"> body &#123;</span><br><span class="line">   background: url(&quot;../img/dog.png&quot;);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>项目结构改变时，修改其变量即可。</p>
+</blockquote>
+<ul>
+<li><p>声明变量  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">- 结构: @name: &#123; 属性: 值 ;&#125;;</span><br><span class="line">- 使用：@name();</span><br><span class="line"> /* Less */</span><br><span class="line">      @background: &#123;background:red;&#125;;</span><br><span class="line">      #main&#123;</span><br><span class="line">          @background();</span><br><span class="line">      &#125;</span><br><span class="line">      @Rules:&#123;</span><br><span class="line">          width: 200px;</span><br><span class="line">          height: 200px;</span><br><span class="line">          border: solid 1px red;</span><br><span class="line">      &#125;;</span><br><span class="line">      #con&#123;</span><br><span class="line">        @Rules();</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">      /* 生成的 CSS */</span><br><span class="line">      #main&#123;</span><br><span class="line">        background:red;</span><br><span class="line">      &#125;</span><br><span class="line">      #con&#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 200px;</span><br><span class="line">        border: solid 1px red;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量运算  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">- 加减法时 以第一个数据的单位为基准</span><br><span class="line">- 乘除法时 注意单位一定要统一</span><br><span class="line">      /* Less */</span><br><span class="line">      @width:300px;</span><br><span class="line">      @color:#222;</span><br><span class="line">      #wrap&#123;</span><br><span class="line">        width:@width-20;</span><br><span class="line">        height:@width-20*5;</span><br><span class="line">        margin:(@width-20)*5;</span><br><span class="line">        color:@color*2;</span><br><span class="line">        background-color:@color + #111;</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">      /* 生成的 CSS */</span><br><span class="line">      #wrap&#123;</span><br><span class="line">        width:280px;</span><br><span class="line">        height:200px;</span><br><span class="line">        margin:1400px;</span><br><span class="line">        color:#444;</span><br><span class="line">        background-color:#333;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量作用域  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @var: @a;</span><br><span class="line">    @a: 100%;</span><br><span class="line">    #wrap &#123;</span><br><span class="line">      width: @var;</span><br><span class="line">      @a: 9%;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #wrap &#123;</span><br><span class="line">      width: 9%;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>就近原则</p>
+<ul>
+<li>用变量去定义变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @fnord:  &quot;I am fnord.&quot;;</span><br><span class="line">    @var:    &quot;fnord&quot;;</span><br><span class="line">    #wrap::after&#123;</span><br><span class="line">      content: @@var; //将@var替换为其值 content:@fnord;</span><br><span class="line">    &#125;</span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #wrap::after&#123;</span><br><span class="line">      content: &quot;I am fnord.&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><ul>
+<li><p>&amp; 的用法<br>&amp;：代表的上一层选择器的名字，此例便是header</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">     #header&#123;</span><br><span class="line">       &amp;:after&#123;</span><br><span class="line">         content:&quot;Less is more!&quot;;</span><br><span class="line">       &#125;</span><br><span class="line">       &amp;_content&#123;//理解方式：直接把 &amp; 替换成 #header</span><br><span class="line">         margin:20px;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     /* 生成的 CSS */</span><br><span class="line">     #header::after&#123;</span><br><span class="line">       content:&quot;Less is more!&quot;;</span><br><span class="line">     &#125;</span><br><span class="line">     #header_content&#123;</span><br><span class="line">         margin:20px;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>媒体查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">   #main&#123;</span><br><span class="line">       //something...</span><br><span class="line"> </span><br><span class="line">       @media screen&#123;</span><br><span class="line">           @media (max-width:768px)&#123;</span><br><span class="line">             width:100px;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       @media tv &#123;</span><br><span class="line">         width:2000px;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   /* 生成的 CSS */</span><br><span class="line">   @media screen and (maxwidth:768px)&#123;</span><br><span class="line">     #main&#123;</span><br><span class="line">         width:100px; </span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   @media tv&#123;</span><br><span class="line">     #main&#123;</span><br><span class="line">       width:2000px;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="混合方法"><a href="#混合方法" class="headerlink" title="混合方法"></a>混合方法</h4><ul>
+<li><p>无参数方法<br>方法犹如声明的集合，使用时直接键入名称即可。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">     .card() &#123; </span><br><span class="line">         background: #f6f6f6;</span><br><span class="line">         -webkit-box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">         box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">     &#125;</span><br><span class="line">     #wrap&#123;</span><br><span class="line">       .card();</span><br><span class="line">     &#125;</span><br><span class="line">     /* 生成的 CSS */</span><br><span class="line">     #wrap&#123;</span><br><span class="line">       background: #f6f6f6;</span><br><span class="line">       -webkit-box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">       box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">     &#125;</span><br><span class="line"> /* Less */</span><br><span class="line">     .card() &#123; </span><br><span class="line">         background: #f6f6f6;</span><br><span class="line">         -webkit-box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">         box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">     &#125;</span><br><span class="line">     #wrap&#123;</span><br><span class="line">       .card();</span><br><span class="line">     &#125;</span><br><span class="line">     /* 生成的 CSS */</span><br><span class="line">     #wrap&#123;</span><br><span class="line">       background: #f6f6f6;</span><br><span class="line">       -webkit-box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">       box-shadow: 0 1px 2px rgba(151, 151, 151, .58);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数方法<br>Less 可以使用默认参数，如果没有传参数，那么将使用默认参数。<br>@arguments 犹如 JS 中的 arguments 指代的是全部参数。<br>传的参数中必须带着单位。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#main&#123;</span><br><span class="line">        .border(0px,5px,30px,red);//必须带着单位</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap&#123;</span><br><span class="line">        .border(0px);</span><br><span class="line">    &#125;</span><br><span class="line">    #content&#123;</span><br><span class="line">      .border;//等价于 .border()</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #main&#123;</span><br><span class="line">        border:solid 1px red;</span><br><span class="line">        box-shadow:0px,5px,30px,red;</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap&#123;</span><br><span class="line">        border:solid 1px #000;</span><br><span class="line">        box-shadow: 0px 50px 30px #000;</span><br><span class="line">    &#125;</span><br><span class="line">    #content&#123;</span><br><span class="line">        border:solid 1px #000;</span><br><span class="line">        box-shadow: 10px 50px 30px #000;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法的匹配模式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">   .triangle(top,@width:20px,@color:#000)&#123;</span><br><span class="line">       border-color:transparent  transparent @color transparent ;</span><br><span class="line">   &#125;</span><br><span class="line">   .triangle(right,@width:20px,@color:#000)&#123;</span><br><span class="line">       border-color:transparent @color transparent  transparent ;</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   .triangle(bottom,@width:20px,@color:#000)&#123;</span><br><span class="line">       border-color:@color transparent  transparent  transparent ;</span><br><span class="line">   &#125;</span><br><span class="line">   .triangle(left,@width:20px,@color:#000)&#123;</span><br><span class="line">       border-color:transparent  transparent  transparent @color;</span><br><span class="line">   &#125;</span><br><span class="line">   .triangle(@_,@width:20px,@color:#000)&#123;</span><br><span class="line">       border-style: solid;</span><br><span class="line">       border-width: @width;</span><br><span class="line">   &#125;</span><br><span class="line">   #main&#123;</span><br><span class="line">       .triangle(left, 50px, #999)</span><br><span class="line">   &#125;</span><br><span class="line">   /* 生成的 CSS */</span><br><span class="line">   #main&#123;</span><br><span class="line">     border-color:transparent  transparent  transparent #999;</span><br><span class="line">     border-style: solid;</span><br><span class="line">     border-width: 50px;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>第一个参数 <code>left</code> 要会找到方法中匹配程度最高的，如果匹配程度相同，将全部选择，并存在着样式覆盖替换。</li>
+<li>如果匹配的参数 是变量，则将会匹配，如 <code>@_</code> 。</li>
+</ul>
+</blockquote>
+<ul>
+<li>方法的命名空间<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">  #card()&#123;</span><br><span class="line">      background: #723232;</span><br><span class="line">      .d(@w:300px)&#123;</span><br><span class="line">          width: @w;</span><br><span class="line">          </span><br><span class="line">          #a(@h:300px)&#123;</span><br><span class="line">              height: @h;//可以使用上一层传进来的方法</span><br><span class="line">              width: @w;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  #wrap&#123;</span><br><span class="line">      #card &gt; .d &gt; #a(100px); // 父元素不能加 括号</span><br><span class="line">  &#125;</span><br><span class="line">  #main&#123;</span><br><span class="line">      #card .d();</span><br><span class="line">  &#125;</span><br><span class="line">  #con&#123;</span><br><span class="line">      //不得单独使用命名空间的方法</span><br><span class="line">      //.d() 如果前面没有引入命名空间 #card ，将会报错</span><br><span class="line">      </span><br><span class="line">      #card; // 等价于 #card();</span><br><span class="line">      .d(20px); //必须先引入 #card</span><br><span class="line">  &#125;</span><br><span class="line">  /* 生成的 CSS */</span><br><span class="line">  #wrap&#123;</span><br><span class="line">    height:100px;</span><br><span class="line">    width:300px;</span><br><span class="line">  &#125;</span><br><span class="line">  #main&#123;</span><br><span class="line">    width:300px;</span><br><span class="line">  &#125;</span><br><span class="line">  #con&#123;</span><br><span class="line">    width:20px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>在 CSS 中<code>&gt;</code> 选择器，选择的是 儿子元素，就是 必须与父元素 有直接血源的元素。</li>
+<li>在引入命令空间时，如使用 <code>&gt;</code> 选择器，父元素不能加 括号。</li>
+<li>不得单独使用命名空间的方法 必须先引入命名空间，才能使用 其中方法。</li>
+<li>子方法 可以使用上一层传进来的方法</li>
+</ul>
+</blockquote>
+<ul>
+<li>方法的条件筛选<br>Less 没有 if else，可是它有 when<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">  #card&#123;</span><br><span class="line">      </span><br><span class="line">      // and 运算符 ，相当于 与运算 &amp;&amp;，必须条件全部符合才会执行</span><br><span class="line">      .border(@width,@color,@style) when (@width&gt;100px) and(@color=#999)&#123;</span><br><span class="line">          border:@style @color @width;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      // not 运算符，相当于 非运算 !，条件为 不符合才会执行</span><br><span class="line">      .background(@color) when not (@color&gt;=#222)&#123;</span><br><span class="line">          background:@color;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      // , 逗号分隔符：相当于 或运算 ||，只要有一个符合条件就会执行</span><br><span class="line">      .font(@size:20px) when (@size&gt;50px) , (@size&lt;100px)&#123;</span><br><span class="line">          font-size: @size;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  #main&#123;</span><br><span class="line">      #card&gt;.border(200px,#999,solid);</span><br><span class="line">      #card .background(#111);</span><br><span class="line">      #card &gt; .font(40px);</span><br><span class="line">  &#125;</span><br><span class="line">  /* 生成后的 CSS */</span><br><span class="line">  #main&#123;</span><br><span class="line">    border:solid #999 200px;</span><br><span class="line">    background:#111;</span><br><span class="line">    font-size:40px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>比较运算有： &gt; &gt;= = =&lt; &lt;。</li>
+<li>= 代表的是等于</li>
+<li>除去关键字 true 以外的值都被视为 false</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>数量不定的参数<br>如果你希望你的方法接受数量不定的参数，你可以使用… ，犹如 ES6 的扩展运算符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">     .boxShadow(...)&#123;</span><br><span class="line">         box-shadow: @arguments;</span><br><span class="line">     &#125;</span><br><span class="line">     .textShadow(@a,...)&#123;</span><br><span class="line">         text-shadow: @arguments;</span><br><span class="line">     &#125;</span><br><span class="line">     #main&#123;</span><br><span class="line">         .boxShadow(1px,4px,30px,red);</span><br><span class="line">         .textShadow(1px,4px,30px,red);</span><br><span class="line">     &#125;</span><br><span class="line">   </span><br><span class="line">     /* 生成后的 CSS */</span><br><span class="line">     #main&#123;</span><br><span class="line">       box-shadow: 1px 4px 30px red;</span><br><span class="line">       text-shadow: 1px 4px 30px red;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环方法<br>Less 并没有提供 for 循环功能，但这也难不倒 聪明的程序员，使用递归去实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">     .generate-columns(4);</span><br><span class="line">   </span><br><span class="line">     .generate-columns(@n, @i: 1) when (@i =&lt; @n) &#123;</span><br><span class="line">       .column-@&#123;i&#125; &#123;</span><br><span class="line">         width: (@i * 100% / @n);</span><br><span class="line">       &#125;</span><br><span class="line">       .generate-columns(@n, (@i + 1));</span><br><span class="line">     &#125;</span><br><span class="line">     /* 生成后的 CSS */</span><br><span class="line">     .column-1 &#123;</span><br><span class="line">       width: 25%;</span><br><span class="line">     &#125;</span><br><span class="line">     .column-2 &#123;</span><br><span class="line">       width: 50%;</span><br><span class="line">     &#125;</span><br><span class="line">     .column-3 &#123;</span><br><span class="line">       width: 75%;</span><br><span class="line">     &#125;</span><br><span class="line">     .column-4 &#123;</span><br><span class="line">       width: 100%;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性拼接方法  </p>
+<ul>
+<li><p><code>+</code>代表的是空格  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    .boxShadow() &#123;</span><br><span class="line">        box-shadow+: inset 0 0 10px #555;</span><br><span class="line">    &#125;</span><br><span class="line">    .main &#123;</span><br><span class="line">      .boxShadow();</span><br><span class="line">      box-shadow+: 0 0 20px black;</span><br><span class="line">    &#125;</span><br><span class="line">    /* 生成后的 CSS */</span><br><span class="line">    .main &#123;</span><br><span class="line">      box-shadow: inset 0 0 10px #555, 0 0 20px black;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>+_</code>代表的是逗号。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">     .Animation() &#123;</span><br><span class="line">       transform+_: scale(2);</span><br><span class="line">     &#125;</span><br><span class="line">     .main &#123;</span><br><span class="line">       .Animation();</span><br><span class="line">       transform+_: rotate(15deg);</span><br><span class="line">     &#125;</span><br><span class="line">   </span><br><span class="line">     /* 生成的 CSS */</span><br><span class="line">     .main &#123;</span><br><span class="line">       transform: scale(2) rotate(15deg);</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>extend 是 Less 的一个伪类。它可继承 所匹配声明中的全部样式。  </p>
+<ul>
+<li><p>extend 关键字的使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">  .animation&#123;</span><br><span class="line">      transition: all .3s ease-out;</span><br><span class="line">      .hide&#123;</span><br><span class="line">        transform:scale(0);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  #main&#123;</span><br><span class="line">      &amp;:extend(.animation);</span><br><span class="line">  &#125;</span><br><span class="line">  #con&#123;</span><br><span class="line">      &amp;:extend(.animation .hide);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /* 生成后的 CSS */</span><br><span class="line">  .animation,#main&#123;</span><br><span class="line">    transition: all .3s ease-out;</span><br><span class="line">  &#125;</span><br><span class="line">  .animation .hide , #con&#123;</span><br><span class="line">      transform:scale(0);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>all 全局搜索替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    #main&#123;</span><br><span class="line">      width: 200px;</span><br><span class="line">    &#125;</span><br><span class="line">    #main &#123;</span><br><span class="line">      &amp;:after &#123;</span><br><span class="line">        content:&quot;Less is good!&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap:extend(#main all) &#123;&#125;</span><br><span class="line">  </span><br><span class="line">    /* 生成的 CSS */</span><br><span class="line">    #main,#wrap&#123;</span><br><span class="line">      width: 200px;</span><br><span class="line">    &#125;</span><br><span class="line">    #main:after, #wrap:after &#123;</span><br><span class="line">        content: &quot;Less is good!&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>选择器和扩展之间 是允许有空格的：pre:hover :extend(div pre).</li>
+<li>可以有多个扩展: pre:hover:extend(div pre):extend(.bucket tr);等同于pre:hover:extend(div pre, .bucket tr)</li>
+<li>这是不可以的，扩展必须在最后 : pre:hover:extend(div pre).nth-child(odd)。</li>
+<li>如果一个规则集包含多个选择器，所有选择器都可以使用extend关键字。</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h4><ul>
+<li>reference<br>Less 中最强大的特性<br>使用引入的 Less 文件，但不会编译它。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">@import (reference) &quot;bootstrap.less&quot;; </span><br><span class="line"></span><br><span class="line">#wrap:extend(.navbar all)&#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>使用@import (reference)导入外部文件，但不会添加 把导入的文件 编译到最终输出中，只引用</p>
+</blockquote>
+<ul>
+<li>once<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@import (once) &quot;foo.less&quot;;</span><br><span class="line">@import (once) &quot;foo.less&quot;; // this statement will be ignored</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>@import语句的默认行为。这表明相同的文件只会被导入一次，而随后的导入文件的重复代码都不会解析。</p>
+</blockquote>
+<ul>
+<li>multiple<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">   </span><br><span class="line">// file: foo.less</span><br><span class="line">.a &#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br><span class="line">// file: main.less</span><br><span class="line">@import (multiple) &quot;foo.less&quot;;</span><br><span class="line">@import (multiple) &quot;foo.less&quot;;</span><br><span class="line">   </span><br><span class="line">/* 生成后的 CSS */</span><br><span class="line">.a &#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br><span class="line">.a &#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>使用@import (multiple)允许导入多个同名文件。</p>
+</blockquote>
+<hr>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li>判断类型<ul>
+<li>isnumber（判断给定的值是否是一个数字）</li>
+<li>iscolor（判断给定的值是否是一个颜色）</li>
+<li>isurl（判断给定的值是否是一个 url）</li>
+</ul>
+</li>
+<li>颜色操作<ul>
+<li>saturate（增加一定数值的颜色饱和度）</li>
+<li>lighten（增加一定数值的颜色亮度）</li>
+<li>darken（降低一定数值的颜色亮度）</li>
+<li>fade（给颜色设定一定数值的透明度）</li>
+<li>mix（根据比例混合两种颜色）</li>
+</ul>
+</li>
+<li>数学函数<ul>
+<li>ceil（向上取整）</li>
+<li>floor（向下取整）</li>
+<li>percentage（将浮点数转换为百分比字符串）</li>
+<li>round（四舍五入）</li>
+<li>sqrt（计算一个数的平方根）</li>
+<li>abs（计算数字的绝对值，原样保持单位）</li>
+<li>pow（计算一个数的乘方）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="Less中使用JS"><a href="#Less中使用JS" class="headerlink" title="Less中使用JS"></a>Less中使用JS</h4><p>因为 Less 是由 JS 编写，所以 Less 有一得天独厚的特性：代码中使用JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/* Less */</span><br><span class="line">    @content:`&quot;aaa&quot;.toUpperCase()`;</span><br><span class="line">    #randomColor&#123;</span><br><span class="line">      @randomColor: ~&quot;rgb(`Math.round(Math.random() * 256)`,`Math.round(Math.random() * 256)`,`Math.round(Math.random() * 256)`)&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      width: ~&quot;`Math.round(Math.random() * 100)`px&quot;;</span><br><span class="line">      &amp;:after&#123;</span><br><span class="line">          content:@content;</span><br><span class="line">      &#125;</span><br><span class="line">      height: ~&quot;`window.innerHeight`px&quot;;</span><br><span class="line">      alert:~&quot;`alert(1)`&quot;;</span><br><span class="line">      #randomColor();</span><br><span class="line">      background-color: @randomColor;</span><br><span class="line">    &#125;</span><br><span class="line">    /* 生成后的 CSS */</span><br><span class="line">  </span><br><span class="line">    // 弹出 1</span><br><span class="line">    #wrap&#123;</span><br><span class="line">      width: 随机值（0~100）px;</span><br><span class="line">      height: 743px;//由电脑而异</span><br><span class="line">      background: 随机颜色;</span><br><span class="line">    &#125;</span><br><span class="line">    #wrap::after&#123;</span><br><span class="line">      content:&quot;AAA&quot;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>参考：<a href="https://segmentfault.com/a/1190000012360995#articleHeader8" target="_blank" rel="noopener">学习Less-看这篇就够了</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/04/newVue/" rel="next" title="Vue生命周期详解">
+                <i class="fa fa-chevron-left"></i> Vue生命周期详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+
+  <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+
+  
+</div>
+
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+        <div id="gitment-container" style="display:none"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/touxiang.jpg"
+                alt="杨哲瑞" />
+            
+              <p class="site-author-name" itemprop="name">杨哲瑞</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/59553259" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/u/2887324632" target="_blank" title="微博"><i class="fa fa-fw fa-weibo"></i>微博</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何使用Less"><span class="nav-number">2.</span> <span class="nav-text">如何使用Less</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套"><span class="nav-number">4.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合方法"><span class="nav-number">5.</span> <span class="nav-text">混合方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">6.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入"><span class="nav-number">7.</span> <span class="nav-text">导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Less中使用JS"><span class="nav-number">9.</span> <span class="nav-text">Less中使用JS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">杨哲瑞</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: '59553259',
+            repo: '59553259.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '687af9ad444c829f7a72c5e51f39c7641b8cd5dd',
+            
+                client_id: '0dfe45fe7f9ef6a06cc8'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      function showGitment(){
+        document.getElementById("gitment-display-button").style.display = "none";
+        document.getElementById("gitment-container").style.display = "block";
+        renderGitment();
+      }
+      
+      </script>
+    
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
