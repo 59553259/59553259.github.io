@@ -136,11 +136,11 @@
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue组件之间的传值">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/componentsValue/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/26/componentsValue/index.html">
 <meta property="og:site_name" content="Naxzer">
 <meta property="og:description" content="组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component(&apos;button-counter&apos;, &amp;#123;  data: function () &amp;#123;    return &amp;#123;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-24T07:35:11.697Z">
+<meta property="og:updated_time" content="2018-08-27T07:31:23.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue组件之间的传值">
 <meta name="twitter:description" content="组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component(&apos;button-counter&apos;, &amp;#123;  data: function () &amp;#123;    return &amp;#123;">
@@ -150,7 +150,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/24/componentsValue/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/26/componentsValue/"/>
 
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/24/componentsValue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/componentsValue/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨哲瑞">
@@ -397,12 +397,24 @@
                 
               
 
-              <time title="创建时间：2018-08-24 15:14:27 / 修改时间：15:35:11" itemprop="dateCreated datePublished" datetime="2018-08-24T15:14:27+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-26 15:14:27" itemprop="dateCreated datePublished" datetime="2018-08-26T15:14:27+08:00">2018-08-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-27 15:31:23" itemprop="dateModified" datetime="2018-08-27T15:31:23+08:00">2018-08-27</time>
               
             
           </span>
@@ -434,8 +446,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/24/componentsValue/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/24/componentsValue/" itemprop="commentsCount"></span>
+                <a href="/2018/08/26/componentsValue/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/26/componentsValue/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -473,7 +485,25 @@
       
         <p>组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。</p>
 <h4 id="自定义Vue组件"><a href="#自定义Vue组件" class="headerlink" title="自定义Vue组件"></a>自定义Vue组件</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个名为 button-counter 的新组件</span></span><br><span class="line"><span class="selector-tag">Vue</span><span class="selector-class">.component</span>(<span class="string">'button-counter'</span>, &#123;</span><br><span class="line">  <span class="attribute">data</span>: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      <span class="attribute">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attribute">template</span>: <span class="string">'&lt;button v-on:click="count++"&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"components-demo"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></button-counter></p>
+<a id="more"></a>
+<p>组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HTML:</span></span><br><span class="line">&lt;div id=<span class="string">"components-demo"</span>&gt;</span><br><span class="line">  &lt;button-counter&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//JS:</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123; <span class="attr">el</span>: <span class="string">'#components-demo'</span> &#125;)</span><br></pre></td></tr></table></figure></button-counter></p>
+<blockquote>
+<p>因为组件是可复用的 Vue 实例，所以它们与 new Vue 接收相同的选项，例如 data、computed、watch、methods 以及生命周期钩子等。仅有的例外是像 el 这样根实例特有的选项</p>
+</blockquote>
+<hr>
+<h4 id="父组件往子组件传值"><a href="#父组件往子组件传值" class="headerlink" title="父组件往子组件传值"></a>父组件往子组件传值</h4><p><strong>通过 Prop 向子组件传递数据:</strong><br>Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Vue</span><span class="selector-class">.component</span>(<span class="string">'blog-post'</span>, &#123;</span><br><span class="line">  <span class="attribute">props</span>: [<span class="string">'title'</span>],</span><br><span class="line">  <span class="attribute">template</span>: <span class="string">'&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在HTML便可使用blog-post调用这个组件，并通过title将数值传给父组件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Blogging with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Why Vue is so fun"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>然而在一个典型的应用中，你可能在 data 里有一个博文的数组：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">new</span> <span class="selector-tag">Vue</span>(&#123;</span><br><span class="line">  <span class="attribute">el</span>: <span class="string">'#blog-post-demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    posts: [</span><br><span class="line">      &#123; id: <span class="number">1</span>, title: <span class="string">'My journey with Vue'</span> &#125;,</span><br><span class="line">      &#123; <span class="attribute">id</span>: <span class="number">2</span>, title: <span class="string">'Blogging with Vue'</span> &#125;,</span><br><span class="line">      &#123; <span class="attribute">id</span>: <span class="number">3</span>, title: <span class="string">'Why Vue is so fun'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在HTML中，可以使用 v-bind 来动态传递 prop：<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-<span class="keyword">for</span>=<span class="string">"post in posts"</span></span><br><span class="line">  v-bind:<span class="built_in">key</span>=<span class="string">"post.id"</span></span><br><span class="line">  v-bind:<span class="built_in">title</span>=<span class="string">"post.title"</span></span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<p>通常你希望每个 prop 都有指定的值类型。这时，你可以以对象形式列出 prop，这些属性的名称和值分别是 prop 各自的名称和类型：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">props:</span> &#123;</span><br><span class="line"><span class="symbol">  title:</span> String,</span><br><span class="line"><span class="symbol">  likes:</span> Number,</span><br><span class="line"><span class="symbol">  isPublished:</span> Boolean,</span><br><span class="line"><span class="symbol">  commentIds:</span> Array,</span><br><span class="line"><span class="symbol">  author:</span> Object</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>传递的参数名称不识别驼峰命名，推荐使用短横线命名法(横杠-命名)</p>
+</blockquote>
+<hr>
+<h4 id="子组件往父组件传值"><a href="#子组件往父组件传值" class="headerlink" title="子组件往父组件传值"></a>子组件往父组件传值</h4><p><strong>通过emit事件子组件往父组件传值:</strong><br>下例子组件通过<code>$emit(&#39;child-say&#39;,this.data)</code>触发父组件的<code>child-say</code>事件，从而向父组件传值。<br>父组件:<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">component</span>  @<span class="attr">child-say</span>=<span class="string">"listenToMyBoy"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><span class="template-variable">&#123;&#123;childWords&#125;</span><span class="xml">&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml"> methods: </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">            listenToMyBoy: function (data)&#123;</span></span><br><span class="line"><span class="template-variable">              this.childWords = data</span></span><br><span class="line"><span class="template-variable">            &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">        &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>子组件：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">"onClickMe"</span>&gt;点击传值&lt;/button&gt;</span><br><span class="line">methods: &#123;</span><br><span class="line">      onClickMe: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'child-say'</span>,<span class="string">'所传的值'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="不同组件之间传值"><a href="#不同组件之间传值" class="headerlink" title="不同组件之间传值"></a>不同组件之间传值</h4><p>使用vuex进行传值</p>
 
       
     </div>
@@ -705,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义Vue组件"><span class="nav-number">1.</span> <span class="nav-text">自定义Vue组件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义Vue组件"><span class="nav-number">1.</span> <span class="nav-text">自定义Vue组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父组件往子组件传值"><span class="nav-number">2.</span> <span class="nav-text">父组件往子组件传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子组件往父组件传值"><span class="nav-number">3.</span> <span class="nav-text">子组件往父组件传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同组件之间传值"><span class="nav-number">4.</span> <span class="nav-text">不同组件之间传值</span></a></li></ol></div>
             
 
           </div>
