@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vue组件之间的传值]]></title>
+    <url>%2F2018%2F08%2F24%2FcomponentsValue%2F</url>
+    <content type="text"><![CDATA[组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component('button-counter', &#123; data: function () &#123; return &#123; count: 0 &#125; &#125;, template: '&lt;button v-on:click="count++"&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;'&#125;) 组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：123&lt;div id="components-demo"&gt; &lt;button-counter&gt;&lt;/button-counter&gt;&lt;/div&gt;]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS中this关键字的用法]]></title>
     <url>%2F2018%2F08%2F21%2Fthis%2F</url>
     <content type="text"><![CDATA[前言this是Javascript语言的一个关键字。它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用。一般来说，this的指向在函数定义的时候是确定不了的，只有函数执行的时候才能确定this到底指向谁，实际上this的最终指向的是那个调用它的对象。 this的四种绑定机制 默认绑定规则：在非严格模式下，默认绑定的this指向全局对象，严格模式下this指向undefined 12345678910function foo() &#123; console.log(this.a); // this指向全局对象&#125;var a = 2;foo(); // 2function foo2() &#123; "use strict"; // 严格模式this绑定到undefined console.log(this.a); &#125;foo2(); // TypeError:a undefined 隐式绑定规则：函数在调用位置，是否有上下文对象，如果有，那么this就会隐式绑定到这个对象上。 123456789101112131415161718function foo() &#123; console.log(this.a);&#125;var a = "Oops, global";let obj2 = &#123; a: 2, foo: foo&#125;;let obj1 = &#123; a: 22, obj2: obj2&#125;;obj2.foo(); // 2 this指向调用函数的对象obj1.obj2.foo(); // 2 this指向最后一层调用函数的对象// 隐式绑定丢失let bar = obj2.foo; // bar只是一个函数别名 是obj2.foo的一个引用bar(); // "Oops, global" - 指向全局 隐式绑定丢失:函数调用时，并没有上下文对象，只是对函数的引用，所以会导致隐式绑定丢失。 显式绑定规则：在某个对象上强制调用函数，通过apply、call、bind将函数中的this绑定到指定对象上,从而将this绑定在这个函数上。 1234567function foo() &#123; console.log(this.a);&#125;let obj = &#123; a: 2&#125;;foo.call(obj); // 2 new绑定(构造函数模式)规则：使用构造调用的时候，this会自动绑定在new期间创建的对象上。 12345function foo(a) &#123; this.a = a; // this绑定到bar上&#125;let bar = new foo(2);console.log(bar.a); // 2 箭头函数的this指向问题箭头函数的this指向不会使用上述的四条规则。规则： 箭头函数中的this继承于它外面第一个不是箭头函数的函数的this指向。 箭头函数的 this 一旦绑定了上下文，就不会被任何代码改变。12345678910111213function foo() &#123; return () =&gt; &#123; console.log(this.a); &#125;;&#125;let obj1 = &#123; a: 2&#125;;let obj2 = &#123; a: 22&#125;;let bar = foo.call(obj1); // foo this指向obj1bar.call(obj2); // 输出2 这里执行箭头函数 并试图绑定this指向到obj2]]></content>
