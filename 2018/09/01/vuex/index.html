@@ -132,25 +132,25 @@
 
 
 
-  <meta name="description" content="从浏览器输入域名，到页面展示的过程大致可简单概括为以下几个部分：1.解析输入的域名，获得该域名的IP地址2.向服务器发送请求3.服务器收到、处理、返回请求4.浏览器渲染页面  域名解析DNS查找域名的IP地址会先在缓存中进行查询，其先后顺序为：">
-<meta name="keywords" content="HTTP">
+  <meta name="description" content="Vuex的作用 Vuex是什么Vuex 是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具devtools extension，提供了诸如零配置的time-travel调试、状态快照导入导出等高级调试功能。Vuex 是专门为 Vue.js 设计的状态管理库，以利用">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从输入域名到页面展示的全过程">
-<meta property="og:url" content="http://yoursite.com/2018/07/29/pageShow/index.html">
+<meta property="og:title" content="Vuex的简单理解">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/vuex/index.html">
 <meta property="og:site_name" content="Naxzer">
-<meta property="og:description" content="从浏览器输入域名，到页面展示的过程大致可简单概括为以下几个部分：1.解析输入的域名，获得该域名的IP地址2.向服务器发送请求3.服务器收到、处理、返回请求4.浏览器渲染页面  域名解析DNS查找域名的IP地址会先在缓存中进行查询，其先后顺序为：">
+<meta property="og:description" content="Vuex的作用 Vuex是什么Vuex 是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具devtools extension，提供了诸如零配置的time-travel调试、状态快照导入导出等高级调试功能。Vuex 是专门为 Vue.js 设计的状态管理库，以利用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-24T07:38:56.726Z">
+<meta property="og:updated_time" content="2018-08-28T06:34:39.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从输入域名到页面展示的全过程">
-<meta name="twitter:description" content="从浏览器输入域名，到页面展示的过程大致可简单概括为以下几个部分：1.解析输入的域名，获得该域名的IP地址2.向服务器发送请求3.服务器收到、处理、返回请求4.浏览器渲染页面  域名解析DNS查找域名的IP地址会先在缓存中进行查询，其先后顺序为：">
+<meta name="twitter:title" content="Vuex的简单理解">
+<meta name="twitter:description" content="Vuex的作用 Vuex是什么Vuex 是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具devtools extension，提供了诸如零配置的time-travel调试、状态快照导入导出等高级调试功能。Vuex 是专门为 Vue.js 设计的状态管理库，以利用">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/29/pageShow/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/vuex/"/>
 
 
 
@@ -160,7 +160,7 @@
   };
 </script>
 
-  <title>从输入域名到页面展示的全过程 | Naxzer</title>
+  <title>Vuex的简单理解 | Naxzer</title>
   
 
 
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/pageShow/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/vuex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨哲瑞">
@@ -372,7 +372,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从输入域名到页面展示的全过程
+          <h1 class="post-title" itemprop="name headline">Vuex的简单理解
               
             
           </h1>
@@ -397,7 +397,7 @@
                 
               
 
-              <time title="创建时间：2018-07-29 15:20:01" itemprop="dateCreated datePublished" datetime="2018-07-29T15:20:01+08:00">2018-07-29</time>
+              <time title="创建时间：2018-09-01 16:31:21" itemprop="dateCreated datePublished" datetime="2018-09-01T16:31:21+08:00">2018-09-01</time>
             
 
             
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-24 15:38:56" itemprop="dateModified" datetime="2018-08-24T15:38:56+08:00">2018-08-24</time>
+                <time title="修改时间：2018-08-28 14:34:39" itemprop="dateModified" datetime="2018-08-28T14:34:39+08:00">2018-08-28</time>
               
             
           </span>
@@ -431,7 +431,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
 
                 
                 
@@ -446,8 +446,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/29/pageShow/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/29/pageShow/" itemprop="commentsCount"></span>
+                <a href="/2018/09/01/vuex/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/01/vuex/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -483,52 +483,55 @@
       
 
       
-        <p>从浏览器输入域名，到页面展示的过程大致可简单概括为以下几个部分：<br>1.解析输入的域名，获得该域名的IP地址<br>2.向服务器发送请求<br>3.服务器收到、处理、返回请求<br>4.浏览器渲染页面</p>
+        <h4 id="Vuex的作用"><a href="#Vuex的作用" class="headerlink" title="Vuex的作用"></a>Vuex的作用</h4><ul>
+<li><p>Vuex是什么<br>Vuex 是一个专为Vue.js应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具devtools extension，提供了诸如零配置的time-travel调试、状态快照导入导出等高级调试功能。<br>Vuex 是专门为 Vue.js 设计的状态管理库，以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。 </p>
+</li>
+<li><p>Vuex的作用是什么<br>当应用多个组件需要共享状态，多个视图依赖于同一状态，不同的视图需要更改同一状态的时候。可以使用Vuex可以把组件的共享状态抽取出来统一管理，使代码更结构化且易维护。<br>比如：有两个页面都需要使用<code>List[{name:&#39;apple&#39;,num:&#39;10&#39;},{name:&#39;orange&#39;,&#39;20&#39;}]</code>时，使用Vuex便不需要分别在2个页面的<code>data</code>中输入<code>List[]</code>数据了。</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>什么情况下应该使用Vuex<br>虽然 Vuex 可以帮助我们管理共享状态，但也附带了更多的概念和框架。这需要对短期和长期效益进行权衡。<br>如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store 模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。引用 Redux 的作者 Dan Abramov 的话说就是：<blockquote>
+<p>Flux 架构就像眼镜：您自会知道什么时候需要它。</p>
+</blockquote>
+</li>
+</ul>
 <hr>
-<h4 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h4><p>DNS查找域名的IP地址会先在缓存中进行查询，其先后顺序为：<br><a id="more"></a></p>
-<p>1.浏览器缓存 ：在<strong>浏览器的缓存</strong>中查找是否有该域名对应的IP地址，若有则直接返回IP地址，若无则进行下一步  </p>
-<p>2.系统缓存 ：系统缓存指本地硬盘上的<strong>hosts文件</strong>，该文件一般位于系统的<code>C:\Windows\System32\drivers\etc\hosts</code>  </p>
-<p>3.路由器缓存 : 查找<strong>路由器缓存</strong>中是否有对应的IP地址  </p>
+<h4 id="State"><a href="#State" class="headerlink" title="State"></a>State</h4><ul>
+<li>安装  <code>npm install vuex --save</code></li>
+<li><p>新建store.js文件(在src目录下新建store文件夹,在store文件夹下新建store.js文件)</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue from <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex from <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">      <span class="built_in">List</span>[&#123;name:<span class="string">'apple'</span>,<span class="built_in">num</span>:<span class="string">'10'</span>&#125;,&#123;name:<span class="string">'orange'</span>,<span class="string">'20'</span>&#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在main.js中加入Vuex</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"><span class="keyword">import</span> &#123;store&#125; <span class="keyword">from</span> <span class="string">'./store/store'</span></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="keyword">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line"><span class="comment">// 把 store 对象提供给 “store” 选项，这可以把 store 的实例注入所有的子组件</span></span><br><span class="line">  store: store,</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取数据</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">     data() &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 计算属性</span></span></span><br><span class="line"><span class="undefined">      computed: &#123;</span></span><br><span class="line"><span class="actionscript">        list() &#123; <span class="comment">// 获取store中的数据</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.List;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;,</span></span><br><span class="line"><span class="undefined">   &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>如果在<strong>浏览器缓存</strong>、<strong>系统缓存</strong>、<strong>路由器缓存</strong>中都没有找到ip地址，浏览器便会发起一个DNS请求到<strong>本地DNS服务器</strong><br>本地DNS服务器一般是由你的网络接入的<strong>服务商</strong>提供，如：电信、联通、移动  </p>
-</blockquote>
-<p>4.本地DNS服务器 ：DNS请求到达<strong>本地DNS服务器</strong>后，本地DNS服务器会先在自己的缓存中查找<br>如果找到了就返回找到的IP,这个过程是以<strong>递归</strong>的方式进行的<br>如果没有，则本地DNS服务器继续向<strong>根域名服务器</strong>发起请求 </p>
-<p>5.根域名服务器：本地DNS继续向<strong>根域名服务器</strong>发出查询请求<br><strong>根域名服务器并没有记录域名与IP之间的对应关系</strong><br>根域名服务器告诉本地DNS服务器，可以到哪个顶级域名服务器上查询  </p>
-<p>6.顶级域名服务器：本地DNS继续向<strong>顶级域名服务器</strong>发出查询请求<br>顶级域名服务器接收到请求后，会告诉本地DNS到权限域名服务器上去查询  </p>
-<p>7.权限域名服务器 ：本地DNS继续向<strong>权限域名服务器</strong>发出查询请求<br>权限域名服务器查询到域名对应的IP后，将IP地址返回给本地DNS  </p>
-<p>本地DNS接收后将其保存到<strong>自己的缓存</strong>中，以备下次查询，提高查询速度<br>至此，一个IP地址的查询就此结束；</p>
-<blockquote>
-<p>整个DNS域名解析是一个递归查询的过程<br>本地域名服务器向根域名服务器、顶级域名服务器和主机域名服务器发起的查询请求是一个迭代查询的过程</p>
-</blockquote>
-<hr>
-<h4 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h4><p>浏览器拿到域名对应的IP地址之后，会向服务器发起TCP连接请求<br>连接请求到达服务器端后，通过<strong>三次握手</strong>建立TCP连接<br>建立TCP连接后，浏览器向服务器发送http请求</p>
-<blockquote>
-<p>浏览器发送请求的端口为<code>1024~65535</code>的一个随机端口<br>向服务器的请求端口为：HTTP协议使用<code>80端口/8080端口</code>，HTTPS使用<code>443端口</code>  </p>
+<p>使用 Vuex 并不意味着你需要将所有的状态放入 Vuex。虽然将所有的状态放到 Vuex 会使状态变化更显式和易调试，但也会使代码变得冗长和不直观。如果有些状态严格属于单个组件，最好还是作为组件的局部状态。你应该根据你的应用开发需要进行权衡和确定</p>
 </blockquote>
 <hr>
-<h4 id="响应请求"><a href="#响应请求" class="headerlink" title="响应请求"></a>响应请求</h4><p>服务器收到客户端请求后，对请求进行处理，包括访问数据库、获取需要获取的内容等<br>然后服务器向浏览器返回一个HTTP响应，将请求的数据发送给浏览器<br>浏览器收到请求后通过<strong>四次挥手</strong>释放TCP连接</p>
+<h4 id="Getter"><a href="#Getter" class="headerlink" title="Getter"></a>Getter</h4><p>Vuex 允许我们在 store 中定义getter（可以认为是 store 的计算属性）。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。<br>比如，我们在store.js里面加入getters，将num的数量加倍：<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">getters: &#123;</span><br><span class="line">        NumDoubble: <span class="keyword">state</span> =&gt; &#123;</span><br><span class="line">            var NumDoubble = <span class="keyword">state</span>.List.map(function(item)&#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    num: List.num * <span class="number">2</span>,</span><br><span class="line">                    name: List.name</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            return NumDoubble;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在页面的computed中调用该方法：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NumDoubble() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.NumDoubble;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<h4 id="渲染页面"><a href="#渲染页面" class="headerlink" title="渲染页面"></a>渲染页面</h4><p>页面渲染主要分为以下几步： </p>
-<p>1.浏览器把获取到的HTML代码解析成1个DOM树  </p>
+<h4 id="Mutation"><a href="#Mutation" class="headerlink" title="Mutation"></a>Mutation</h4><p>更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数。mutation 必须是同步函数。<br>比如，我们在store.js里面加入Mutation，将num的数量加倍：<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Mutation: &#123;</span><br><span class="line">        NumDoubble: <span class="keyword">state</span> =&gt; &#123;</span><br><span class="line">            var NumDoubble = <span class="keyword">state</span>.List.map(function(item)&#123;</span><br><span class="line">                return &#123;</span><br><span class="line">                    num: List.num * <span class="number">2</span>,</span><br><span class="line">                    name: List.name</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">state</span>.List = NumDoubble;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在页面的methods中调用该方法，使用button触发：<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  &lt;button v-on:click=<span class="string">"changeGoodsName"</span>&gt;修改商品名字&lt;/button&gt;</span><br><span class="line">  .....</span><br><span class="line">  .....</span><br><span class="line">  .....</span><br><span class="line">methods: &#123;</span><br><span class="line">NumDoubble() &#123;</span><br><span class="line">   this.$store.commit(<span class="string">'NumDoubble'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象<br>DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等  </p>
+<p>上面的Mutation执行过程是：按钮点击–&gt;执行按钮点击事件方法–&gt;执行store.commit–&gt;执行mutations里面对应的方法–&gt;修改state里面对应的数据–&gt;页面渲染。</p>
 </blockquote>
-<p>2.浏览器把CSS解析成CSSOM(样式结构体)，在解析的过程中会去掉浏览器不能识别的样式  </p>
-<p>3.DOM Tree 和CSSOM组合后构建render tree  </p>
+<hr>
+<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>Action 类似于 mutation，不同在于： </p>
+<ul>
+<li>Action 提交的是 mutation，而不是直接变更状态。 </li>
+<li>Action 可以执行异步操作。<br>如：<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">     disCountAsync (&#123; commit &#125;) &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          commit(<span class="string">'NumDoubble'</span>);</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h4 id="Module"><a href="#Module" class="headerlink" title="Module"></a>Module</h4><p>Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割。<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个node都有自己的style<br>render tree不包含隐藏的节点 (这些节点不会用于呈现，而且不会影响呈现的,比如display:none的节点)<br>visibility:hidden隐藏的元素还是会包含到 render tree中的(visibility:hidden 会影响布局(layout)，会占有空间)  </p>
-</blockquote>
-<p>4.浏览器根据render tree渲染和展示页面  </p>
-<blockquote>
-<p>浏览器在构造页面时，当浏览器从服务器端接收到HTML文档时，会从上到下依次解析HTML文档，转换为DOM树<br>在转换过程中，如果发现某个Node（节点）引用了CSS、IMG，则会发起一个request去请求CSS或IMG,而浏览器则会继续执行下面的HTML转换，而不等待request的返回,当request返回后，只需要把相应的内容放到对应的Node上即可<br>但是当引用了JS的时候，浏览器发起一个JS的request请求后，会一直等待该请求的返回,因为浏览器需要构建一个稳定的DOM树，而JS代码很有可能会改变DOM结构,浏览器为了防止出现这种情况，所以会阻塞后续资源的下载</p>
-</blockquote>
-<h5 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h5><p>回流：当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建  </p>
-<blockquote>
-<p>每个页面至少需要一次回流，就是在页面第一次加载的时候  </p>
-</blockquote>
-<p>重绘:当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局</p>
-<blockquote>
-<p>回流必将引起重绘，而重绘不一定会引起回流<br>在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树,完成回流后，浏览器会重新绘制受影响的部分到屏幕中<br>回流可以理解为render树的结构发生了变化，需要重新构建<br>重绘指结构没有变化，只是一些对结构布局没有产生影响的元素发生了变化</p>
+<p>store.state.a   // -&gt; moduleA 的状态<br>store.state.b   // -&gt; moduleB 的状态</p>
 </blockquote>
 
       
@@ -550,7 +553,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
           
         </div>
       
@@ -563,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/21/Markdown/" rel="next" title="Markdown基本语法">
-                <i class="fa fa-chevron-left"></i> Markdown基本语法
+              <a href="/2018/08/27/node/" rel="next" title="Vue项目内存溢出">
+                <i class="fa fa-chevron-left"></i> Vue项目内存溢出
               </a>
             
           </div>
@@ -572,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/04/newVue/" rel="prev" title="Vue生命周期详解">
-                Vue生命周期详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -765,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#域名解析"><span class="nav-number">1.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发送请求"><span class="nav-number">2.</span> <span class="nav-text">发送请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应请求"><span class="nav-number">3.</span> <span class="nav-text">响应请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染页面"><span class="nav-number">4.</span> <span class="nav-text">渲染页面</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#回流与重绘"><span class="nav-number">4.1.</span> <span class="nav-text">回流与重绘</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vuex的作用"><span class="nav-number">1.</span> <span class="nav-text">Vuex的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#State"><span class="nav-number">2.</span> <span class="nav-text">State</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Getter"><span class="nav-number">3.</span> <span class="nav-text">Getter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mutation"><span class="nav-number">4.</span> <span class="nav-text">Mutation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action"><span class="nav-number">5.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Module"><span class="nav-number">6.</span> <span class="nav-text">Module</span></a></li></ol></div>
             
 
           </div>
