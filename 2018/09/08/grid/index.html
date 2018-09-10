@@ -132,25 +132,34 @@
 
 
 
-  <meta name="description" content="组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component(&apos;button-counter&apos;, &amp;#123;  data: function () &amp;#123;    return &amp;#123;">
-<meta name="keywords" content="Vue">
+  <meta name="description" content="前言CSS Grid(网格)布局是一个二维的基于网格的布局系统。Grid 必须使用display: grid将容器元素定义为一个 grid(网格) 布局,许多浏览器都提供了对 CSS Grid 的原生支持,以下是各主流浏览器支持Grid的版本号：      Chrome Opera Firefox IE Edge Safari     57 44 52 11 16 10.1">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue组件之间的传值">
-<meta property="og:url" content="http://yoursite.com/2018/08/26/componentsValue/index.html">
+<meta property="og:title" content="Grid布局">
+<meta property="og:url" content="http://yoursite.com/2018/09/08/grid/index.html">
 <meta property="og:site_name" content="Naxzer">
-<meta property="og:description" content="组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component(&apos;button-counter&apos;, &amp;#123;  data: function () &amp;#123;    return &amp;#123;">
+<meta property="og:description" content="前言CSS Grid(网格)布局是一个二维的基于网格的布局系统。Grid 必须使用display: grid将容器元素定义为一个 grid(网格) 布局,许多浏览器都提供了对 CSS Grid 的原生支持,以下是各主流浏览器支持Grid的版本号：      Chrome Opera Firefox IE Edge Safari     57 44 52 11 16 10.1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-27T07:34:49.932Z">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_fJNIdDiScjhI9CZjdxv3Eg.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_he7CoAzdQB3sei_WpHOtNg.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_l-adYpQCGve7W6DWY949pw.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_QDSybpxjXSat6UtoHgUapQ.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-numbers.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-template-areas.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-column-row-gap.png">
+<meta property="og:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-start-end-a.png">
+<meta property="og:updated_time" content="2018-09-10T02:31:01.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue组件之间的传值">
-<meta name="twitter:description" content="组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。 自定义Vue组件123456789// 定义一个名为 button-counter 的新组件Vue.component(&apos;button-counter&apos;, &amp;#123;  data: function () &amp;#123;    return &amp;#123;">
+<meta name="twitter:title" content="Grid布局">
+<meta name="twitter:description" content="前言CSS Grid(网格)布局是一个二维的基于网格的布局系统。Grid 必须使用display: grid将容器元素定义为一个 grid(网格) 布局,许多浏览器都提供了对 CSS Grid 的原生支持,以下是各主流浏览器支持Grid的版本号：      Chrome Opera Firefox IE Edge Safari     57 44 52 11 16 10.1">
+<meta name="twitter:image" content="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_fJNIdDiScjhI9CZjdxv3Eg.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/26/componentsValue/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/08/grid/"/>
 
 
 
@@ -160,7 +169,7 @@
   };
 </script>
 
-  <title>Vue组件之间的传值 | Naxzer</title>
+  <title>Grid布局 | Naxzer</title>
   
 
 
@@ -355,7 +364,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/componentsValue/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/08/grid/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杨哲瑞">
@@ -372,7 +381,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue组件之间的传值
+          <h1 class="post-title" itemprop="name headline">Grid布局
               
             
           </h1>
@@ -397,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2018-08-26 15:14:27" itemprop="dateCreated datePublished" datetime="2018-08-26T15:14:27+08:00">2018-08-26</time>
+              <time title="创建时间：2018-09-08 14:42:56" itemprop="dateCreated datePublished" datetime="2018-09-08T14:42:56+08:00">2018-09-08</time>
             
 
             
@@ -414,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-27 15:34:49" itemprop="dateModified" datetime="2018-08-27T15:34:49+08:00">2018-08-27</time>
+                <time title="修改时间：2018-09-10 10:31:01" itemprop="dateModified" datetime="2018-09-10T10:31:01+08:00">2018-09-10</time>
               
             
           </span>
@@ -431,7 +440,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
 
                 
                 
@@ -446,8 +455,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/26/componentsValue/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/26/componentsValue/" itemprop="commentsCount"></span>
+                <a href="/2018/09/08/grid/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/08/grid/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -483,27 +492,93 @@
       
 
       
-        <p>组件（component）是Vue最强大的功能之一，项目中经常会遇到组件之间的传值问题。下面对自定义Vue组件，以及组件之间的传值问题进行总结。</p>
-<h4 id="自定义Vue组件"><a href="#自定义Vue组件" class="headerlink" title="自定义Vue组件"></a>自定义Vue组件</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个名为 button-counter 的新组件</span></span><br><span class="line"><span class="selector-tag">Vue</span><span class="selector-class">.component</span>(<span class="string">'button-counter'</span>, &#123;</span><br><span class="line">  <span class="attribute">data</span>: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      <span class="attribute">count</span>: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attribute">template</span>: <span class="string">'&lt;button v-on:click="count++"&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>CSS Grid(网格)布局是一个二维的基于网格的布局系统。<br>Grid 必须使用<code>display: grid</code>将容器元素定义为一个 grid(网格) 布局,许多浏览器都提供了对 CSS Grid 的原生支持,以下是各主流浏览器支持Grid的版本号：  </p>
+<table>
+<thead>
+<tr>
+<th>Chrome</th>
+<th style="text-align:center">Opera</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Edge</th>
+<th style="text-align:right">Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>57</td>
+<td style="text-align:center">44</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">16</td>
+<td style="text-align:right">10.1</td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
-<p>组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HTML:</span></span><br><span class="line">&lt;div id=<span class="string">"components-demo"</span>&gt;</span><br><span class="line">  &lt;button-counter&gt;<span class="xml"><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//JS:</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123; <span class="attr">el</span>: <span class="string">'#components-demo'</span> &#125;)</span><br></pre></td></tr></table></figure></button-counter></p>
+<hr>
+<h4 id="Grid布局"><a href="#Grid布局" class="headerlink" title="Grid布局"></a>Grid布局</h4><p>CSS Grid 布局由两个核心组成部分是 <strong>wrapper</strong>（父元素）和 <strong>items</strong>（子元素）。 wrapper 是实际的 grid(网格)，items 是 grid(网格) 内的内容。<br>下面是一个HTML页面，其中包含一个 wrapper 元素，内部包含6个 items ：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"wrapper"</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item1"</span>&gt;<span class="number">1</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item2"</span>&gt;<span class="number">2</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item3"</span>&gt;<span class="number">3</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item4"</span>&gt;<span class="number">4</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item5"</span>&gt;<span class="number">5</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"item6"</span>&gt;<span class="number">6</span>&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>grid-template-row</code>和<code>grid-template-column</code>属性，使其成为一个3X3的二维网格容器：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line"><span class="built_in">display</span>: <span class="built_in">grid</span>;  //将wrapper 元素变成一个 <span class="built_in">grid</span></span><br><span class="line"><span class="built_in">grid</span>-template-<span class="built_in">columns</span>: 100px 100px 100px; //设置<span class="built_in">col</span>为<span class="number">3</span>列，每列100px宽</span><br><span class="line"><span class="built_in">grid</span>-template-rows: 100px 100px 100px; //设置<span class="built_in">row</span>为<span class="number">3</span>行，每行100px高</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这便是一个简单的Grid布局，其效果为（颜色属于CSS样式，与Grid布局无关）：<br><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_fJNIdDiScjhI9CZjdxv3Eg.png" alt="grid">  </p>
+<p>虽然我们定义的是一个3X3的网格，但由于我们只有 6 个 items(子元素) 来填充这个网格，所以上图只能看见3X2的网格，若我们再加3个 items(子元素)，那么最后一行也会被填满。<br>要定位和调整 items(子元素) 大小，我们可以使用 <code>grid-column</code> 和 <code>grid-row</code> 属性来设置：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.item1 &#123;  <span class="comment">// item1 占据从第一条网格线开始，到第四条网格线结束</span></span><br><span class="line">grid-column-<span class="string">start:</span> <span class="number">1</span>;</span><br><span class="line">grid-column-<span class="string">end:</span> <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其显示效果为：<br><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_he7CoAzdQB3sei_WpHOtNg.png" alt="grid"><br>我们可以看出，item1独立占据了第一行整行，剩下的5个item便继续向下填充，将开始设置的第三行也撑出来了。   </p>
+<p>关于网格线，可以看下图，可知当col设置为3时，将会有4条col网格线：<br><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_l-adYpQCGve7W6DWY949pw.png" alt="grid"><br>同理，对其他item进行排列：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item1</span> &#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">1</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item3</span> &#123;</span><br><span class="line"><span class="attribute">grid-row-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-row-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item4</span> &#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其效果图为：<br><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/1_QDSybpxjXSat6UtoHgUapQ.png" alt="grid">  </p>
+<hr>
+<h4 id="父元素-网格容器-Grid-Container-属性"><a href="#父元素-网格容器-Grid-Container-属性" class="headerlink" title="父元素 网格容器(Grid Container) 属性"></a>父元素 网格容器(Grid Container) 属性</h4><ul>
+<li>display<br>将元素定义为网格容器，并为其内容建立新的 网格格式上下文。<br>值：<br><strong>grid</strong> ：生成一个块级网格<br><strong>inline-grid</strong> ：生成一个内联网格<br><strong>subgrid</strong> ：如果你的网格容器本身是另一个网格的网格项（即嵌套网格），你可以使用这个属性来表示<br>你希望它的行/列的大小继承自它的父级网格容器，而不是自己指定的。<br>如果你想要设置为<strong>网格容器</strong>元素本身已经是<strong>网格项</strong>（嵌套网格布局），用这个属性指明这个容器内部的<strong>网格项</strong>的行列尺寸直接<strong>继承</strong>其父级的<strong>网格容器</strong>属性。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: grid | inline-grid | subgrid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>因为组件是可复用的 Vue 实例，所以它们与 new Vue 接收相同的选项，例如 data、computed、watch、methods 以及生命周期钩子等。仅有的例外是像 el 这样根实例特有的选项</p>
+<p>注意：在 网格容器(Grid Container) 上使用column，float，clear， vertical-align 不会产生任何效果。</p>
 </blockquote>
-<hr>
-<h4 id="父组件往子组件传值"><a href="#父组件往子组件传值" class="headerlink" title="父组件往子组件传值"></a>父组件往子组件传值</h4><p><strong>通过 Prop 向子组件传递数据:</strong><br>Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中：<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Vue</span><span class="selector-class">.component</span>(<span class="string">'blog-post'</span>, &#123;</span><br><span class="line">  <span class="attribute">props</span>: [<span class="string">'title'</span>],</span><br><span class="line">  <span class="attribute">template</span>: <span class="string">'&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>在HTML便可使用blog-post调用这个组件，并通过title将数值传给父组件：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Blogging with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Why Vue is so fun"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然而在一个典型的应用中，你可能在 data 里有一个博文的数组：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">new</span> <span class="selector-tag">Vue</span>(&#123;</span><br><span class="line">  <span class="attribute">el</span>: <span class="string">'#blog-post-demo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    posts: [</span><br><span class="line">      &#123; id: <span class="number">1</span>, title: <span class="string">'My journey with Vue'</span> &#125;,</span><br><span class="line">      &#123; <span class="attribute">id</span>: <span class="number">2</span>, title: <span class="string">'Blogging with Vue'</span> &#125;,</span><br><span class="line">      &#123; <span class="attribute">id</span>: <span class="number">3</span>, title: <span class="string">'Why Vue is so fun'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>在HTML中，可以使用 v-bind 来动态传递 prop：<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-<span class="keyword">for</span>=<span class="string">"post in posts"</span></span><br><span class="line">  v-bind:<span class="built_in">key</span>=<span class="string">"post.id"</span></span><br><span class="line">  v-bind:<span class="built_in">title</span>=<span class="string">"post.title"</span></span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<p>通常你希望每个 prop 都有指定的值类型。这时，你可以以对象形式列出 prop，这些属性的名称和值分别是 prop 各自的名称和类型：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">props:</span> &#123;</span><br><span class="line"><span class="symbol">  title:</span> String,</span><br><span class="line"><span class="symbol">  likes:</span> Number,</span><br><span class="line"><span class="symbol">  isPublished:</span> Boolean,</span><br><span class="line"><span class="symbol">  commentIds:</span> Array,</span><br><span class="line"><span class="symbol">  author:</span> Object</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>grid-template-columns / grid-template-rows<br>使用空格分隔的值列表，用来定义网格的列和行。这些值表示 网格轨道(Grid Track) 大小，它们之间的空格表示网格线。<br>值：<br><strong>track-size</strong>： 可以是长度值，百分比，或者等份网格容器中可用空间（使用 fr 单位）<br><strong>line-name</strong>：你可以选择的任意名称  <figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.<span class="keyword">container</span> &#123;</span><br><span class="line"><span class="keyword">grid</span>-template-columns: &lt;<span class="keyword">track</span>-<span class="keyword">size</span>&gt; ... | &lt;line-name&gt; &lt;<span class="keyword">track</span>-<span class="keyword">size</span>&gt; ...;</span><br><span class="line"><span class="keyword">grid</span>-template-rows: &lt;<span class="keyword">track</span>-<span class="keyword">size</span>&gt; ... | &lt;line-name&gt; &lt;<span class="keyword">track</span>-<span class="keyword">size</span>&gt; ...;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>示例：<br>当你在 网格轨道(Grid Track) 值之间留出空格时，网格线会自动分配数字名称：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="number">40px</span> <span class="number">50px</span> auto <span class="number">50px</span> <span class="number">40px</span>;</span><br><span class="line"><span class="attribute">grid-template-rows</span>: <span class="number">25%</span> <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-numbers.png" alt="grid"><br>如果你的定义包含多个重复值，则可以使用 <code>repeat()</code> 表示法来简化定义：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line"><span class="built_in">grid</span>-template-<span class="built_in">columns</span>: repeat(<span class="number">3</span>, 20px [<span class="built_in">col</span>-start]) <span class="number">5</span><span class="symbol">%</span>;</span><br><span class="line">&#125;</span><br><span class="line">//等价于</span><br><span class="line">.container &#123;</span><br><span class="line"><span class="built_in">grid</span>-template-<span class="built_in">columns</span>: 20px [<span class="built_in">col</span>-start] 20px [<span class="built_in">col</span>-start] 20px [<span class="built_in">col</span>-start] <span class="number">5</span><span class="symbol">%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>fr</code> 单元允许你用等分网格容器剩余可用空间来设置 网格轨道(Grid Track) 的大小。剩余可用空间是除去所有非灵活网格项之后计算得到的。在这个例子中，可用空间总量减去 50px 后，再给 <code>fr</code> 单元的值3等分：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="number">1</span>fr <span class="number">50px</span> <span class="number">1</span>fr <span class="number">1</span>fr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>grid-template-areas<br>通过引用 <code>grid-area</code> 属性指定的 网格区域(Grid Area) 名称来定义网格模板。重复网格区域的名称导致内容跨越这些单元格。一个点号（.）代表一个空的网格单元。这个语法本身可视作网格的可视化结构。<br>值：<br><strong>grid-area-name</strong>:由网格项的 grid-area 指定的网格区域名称<br><strong>.(点号)</strong>:代表一个空的网格单元<br><strong>none</strong>:不定义网格区域<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">grid-template-areas</span>: </span><br><span class="line"><span class="string">" | . | none | ..."</span></span><br><span class="line"><span class="string">"..."</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>示例：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-a</span> &#123;</span><br><span class="line"><span class="attribute">grid-area</span>: header;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item-b</span> &#123;</span><br><span class="line"><span class="attribute">grid-area</span>: main;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item-c</span> &#123;</span><br><span class="line"><span class="attribute">grid-area</span>: sidebar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item-d</span> &#123;</span><br><span class="line"><span class="attribute">grid-area</span>: footer;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span> <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">grid-template-rows</span>: auto;</span><br><span class="line"><span class="attribute">grid-template-areas</span>: </span><br><span class="line"><span class="string">"header header header header"</span></span><br><span class="line"><span class="string">"main main . sidebar"</span></span><br><span class="line"><span class="string">"footer footer footer footer"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码将创建一个 4 列 3 行的网格。整个顶行将由 header 区域 组成。中间一排将由两个 main 区域，一个是空单元格，一个 sidebar 区域组成。最后一行全是 footer 区域组成。<br><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-template-areas.png" alt="grid">  </p>
+<ul>
+<li>grid-column-gap / grid-row-gap<br>指定网格线(grid lines)的大小。你可以把它想象为设置列/行之间间距的宽度。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">grid-template-columns</span>: <span class="number">100px</span> <span class="number">50px</span> <span class="number">100px</span>;</span><br><span class="line"><span class="attribute">grid-template-rows</span>: <span class="number">80px</span> auto <span class="number">80px</span>; </span><br><span class="line"><span class="attribute">grid-column-gap</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">grid-row-gap</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-column-row-gap.png" alt="grid">  </p>
 <blockquote>
-<p>传递的参数名称不识别驼峰命名，推荐使用短横线命名法(横杠-命名)</p>
+<p>只能在 列/行 之间创建间距，网格外部边缘不会有这个间距</p>
 </blockquote>
+<ul>
+<li><p>justify-items<br>沿着 行轴线(row axis) 对齐 网格项(grid items) 内的内容（相反的属性是 align-items 沿着列轴线对齐）。该值适用于容器内的所有网格项。<br>值：<br><strong>start</strong>：将内容对齐到网格区域(grid area)的左侧<br><strong>end</strong>：将内容对齐到网格区域的右侧<br><strong>center</strong>：将内容对齐到网格区域的中间（水平居中）<br><strong>stretch</strong>：填满网格区域宽度（默认值） </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">justify-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>align-items<br>沿着 列轴线(column axis) 对齐 网格项(grid items) 内的内容（相反的属性是 justify-items 沿着行轴线对齐）。该值适用于容器内的所有网格项。<br>值：<br><strong>start</strong>：将内容对齐到网格区域(grid area)的顶部<br><strong>end</strong>：将内容对齐到网格区域的底部<br><strong>center</strong>：将内容对齐到网格区域的中间（垂直居中）<br><strong>stretch</strong>：填满网格区域高度（默认值）  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line"><span class="attribute">align-items</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>justify-content/align-content<br>此属性沿着 行轴线(row axis) 对齐网格（相反的属性是 align-content ，沿着列轴线对齐网格）。<br>值：<br><strong>start</strong>：将网格对齐到 网格容器(grid container) 的左边<br><strong>end</strong>：将网格对齐到 网格容器 的右边<br><strong>center</strong>：将网格对齐到 网格容器 的中间（水平居中）<br><strong>stretch</strong>：调整 网格项(grid items) 的宽度，允许该网格填充满整个 网格容器 的宽度<br><strong>space-around</strong>：在每个网格项之间放置一个均匀的空间，左右两端放置一半的空间<br><strong>space-between</strong>：在每个网格项之间放置一个均匀的空间，左右两端没有空间<br><strong>space-evenly</strong>：在每个栅格项目之间放置一个均匀的空间，左右两端放置一个均匀的空间  </p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">justify-content: start | <span class="type">end</span> | <span class="type">center</span> | <span class="type">stretch</span> | <span class="type">space</span>-around | <span class="type">space</span>-between | <span class="type">space</span>-evenly;    </span><br><span class="line">&#125;</span><br><span class="line">//相反的属性是 align-content，沿着列轴线对齐网格</span><br><span class="line">.container &#123;</span><br><span class="line">align-content: start | <span class="type">end</span> | <span class="type">center</span> | <span class="type">stretch</span> | <span class="type">space</span>-around | <span class="type">space</span>-between | <span class="type">space</span>-evenly;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
-<h4 id="子组件往父组件传值"><a href="#子组件往父组件传值" class="headerlink" title="子组件往父组件传值"></a>子组件往父组件传值</h4><p><strong>通过emit事件子组件往父组件传值:</strong><br>下例子组件通过<code>$emit(&#39;child-say&#39;,this.data)</code>触发父组件的<code>child-say</code>事件，从而向父组件传值。<br>父组件:<br><figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">component</span>  @<span class="attr">child-say</span>=<span class="string">"listenToMyBoy"</span>&gt;</span><span class="tag">&lt;/<span class="name">component</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><span class="template-variable">&#123;&#123;childWords&#125;</span><span class="xml">&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml"> methods: </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">            listenToMyBoy: function (data)&#123;</span></span><br><span class="line"><span class="template-variable">              this.childWords = data</span></span><br><span class="line"><span class="template-variable">            &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">        &#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>子组件：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">"onClickMe"</span>&gt;点击传值&lt;/button&gt;</span><br><span class="line">methods: &#123;</span><br><span class="line">      onClickMe: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'child-say'</span>,<span class="string">'所传的值'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="子元素-网格项-Grid-Items-属性"><a href="#子元素-网格项-Grid-Items-属性" class="headerlink" title="子元素 网格项(Grid Items) 属性"></a>子元素 网格项(Grid Items) 属性</h4><ul>
+<li>grid-column-start / grid-column-end / grid-row-start / grid-row-end<br>通过指定 网格线(grid lines) 来确定网格内 网格项(grid item) 的位置。 <strong>grid-column-start</strong> /  <strong>grid-row-start</strong> 是网格项目开始的网格线，<strong>grid-column-end</strong> / <strong>grid-row-end</strong> 是网格项结束的网格线。<br>值：<br><code>&lt;line&gt;</code> ：可以是一个数字引用一个编号的网格线，或者一个名字来引用一个命名的网格线<br><code>span &lt;number&gt;</code> ：该网格项将跨越所提供的网格轨道数量<br><code>span &lt;name&gt;</code> ：该网格项将跨越到它与提供的名称位置<br><code>auto</code> ：表示自动放置，自动跨度，默认会扩展一个网格轨道的宽度或者高度<br>格式：  <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;</span><br><span class="line">grid-column-<span class="keyword">star</span><span class="variable">t:</span> <span class="symbol">&lt;number&gt;</span> | <span class="symbol">&lt;name&gt;</span> | span <span class="symbol">&lt;number&gt;</span> | span <span class="symbol">&lt;name&gt;</span> | auto</span><br><span class="line">grid-column-end: <span class="symbol">&lt;number&gt;</span> | <span class="symbol">&lt;name&gt;</span> | span <span class="symbol">&lt;number&gt;</span> | span <span class="symbol">&lt;name&gt;</span> | auto</span><br><span class="line">grid-row-<span class="keyword">star</span><span class="variable">t:</span> <span class="symbol">&lt;number&gt;</span> | <span class="symbol">&lt;name&gt;</span> | span <span class="symbol">&lt;number&gt;</span> | span <span class="symbol">&lt;name&gt;</span> | auto</span><br><span class="line">grid-row-end: <span class="symbol">&lt;number&gt;</span> | <span class="symbol">&lt;name&gt;</span> | span <span class="symbol">&lt;number&gt;</span> | span <span class="symbol">&lt;name&gt;</span> | auto</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>示例：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item-a</span> &#123;</span><br><span class="line"><span class="attribute">grid-column-start</span>: <span class="number">2</span>;</span><br><span class="line"><span class="attribute">grid-column-end</span>: five;</span><br><span class="line"><span class="attribute">grid-row-start</span>: row1-start</span><br><span class="line">grid-row-end: <span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://newimg88.b0.upaiyun.com/newimg88/2017/12/grid-start-end-a.png" alt="grid"> </p>
+<ul>
+<li>justify-self/align-self<br>沿着 行轴线(row axis) 对齐 网格项 内的内容（ 相反的属性是 align-self ，沿着列轴线(column axis)对齐）。此值适用于单个网格项内的内容。<br>值：<br><strong>start</strong>：将内容对齐到网格区域的左侧<br><strong>end</strong>：将内容对齐到网格区域的右侧<br><strong>center</strong>：将内容对齐到网格区域的中间（水平居中）<br><strong>stretch</strong>：填充整个网格区域的宽度（这是默认值）  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span>&#123;</span><br><span class="line"><span class="attribute">align-self</span>: start | end | center | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
-<h4 id="不同组件之间传值"><a href="#不同组件之间传值" class="headerlink" title="不同组件之间传值"></a>不同组件之间传值</h4><p>使用vuex进行传值</p>
+<blockquote>
+<p>参考：<br><a href="http://www.css88.com/archives/8506" target="_blank" rel="noopener">5分钟学会 CSS Grid 布局</a><br><a href="http://www.css88.com/archives/8510" target="_blank" rel="noopener">CSS Grid 布局完全指南(图解 Grid 详细教程)</a>  </p>
+</blockquote>
 
       
     </div>
@@ -524,7 +599,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           
         </div>
       
@@ -537,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/21/this/" rel="next" title="JS中this关键字的用法">
-                <i class="fa fa-chevron-left"></i> JS中this关键字的用法
+              <a href="/2018/09/01/vuex/" rel="next" title="Vuex的简单理解">
+                <i class="fa fa-chevron-left"></i> Vuex的简单理解
               </a>
             
           </div>
@@ -546,10 +621,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/27/node/" rel="prev" title="Vue项目内存溢出">
-                Vue项目内存溢出 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -739,7 +810,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义Vue组件"><span class="nav-number">1.</span> <span class="nav-text">自定义Vue组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父组件往子组件传值"><span class="nav-number">2.</span> <span class="nav-text">父组件往子组件传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子组件往父组件传值"><span class="nav-number">3.</span> <span class="nav-text">子组件往父组件传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同组件之间传值"><span class="nav-number">4.</span> <span class="nav-text">不同组件之间传值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grid布局"><span class="nav-number">2.</span> <span class="nav-text">Grid布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#父元素-网格容器-Grid-Container-属性"><span class="nav-number">3.</span> <span class="nav-text">父元素 网格容器(Grid Container) 属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子元素-网格项-Grid-Items-属性"><span class="nav-number">4.</span> <span class="nav-text">子元素 网格项(Grid Items) 属性</span></a></li></ol></div>
             
 
           </div>
