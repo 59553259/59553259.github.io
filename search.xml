@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS中的rem,em与px区别]]></title>
+    <url>%2F2018%2F09%2F21%2FcssDanWei%2F</url>
+    <content type="text"><![CDATA[pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。 emem相对单位，相对于当前对象内文本的字体尺寸。em的值是不固定的，是相对于父元素的属性而计算的。如当前对行内文本的字体尺寸未被设置，则相对于浏览器的默认字体尺寸，默认字体为16px。所有未经调整的浏览器都符合：1em= 16px,但为了便于px与em之间的换算，在CSS中设置font-size:62.5%，即1em=16px*62.5%=10px123456789html&#123; font-size:62.5% // font-size:10px 1em:10px&#125;div&#123; font-size:1.2em //font-size: 10 *1.2 =12px&#125;p&#123; font-size:1.2em //font-size= 12*1.2=14.4px&#125; remrem也是相对单位，与em不同的是，它是相对于HTML页面的根元素。通过rem，既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。1234p&#123; font-size:16px; font-size:1rem;&#125; 注意chrome强制最小字体为12号，即使设置成10px最终都会显示成12px，当把html的font-size设置成10px,子节点rem的计算还是以12px为基准 一些其他的单位% : 百分百。vw：viewpoint width，视窗宽度，1vw等于视窗宽度的1%。vh：viewpoint height，视窗高度，1vh等于视窗高度的1%。vmin：vw和vh中较小的那个。vmax：vw和vh中较大的那个。in:寸cm:厘米mm:毫米pt:point，大约1/72寸pc:pica，大约6pt，1/6寸]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue中computed计算属性与watch侦听器的对比]]></title>
     <url>%2F2018%2F09%2F16%2Fcomputed%2F</url>
     <content type="text"><![CDATA[首先看一个例子：12345678910111213141516//HTML&lt;div id="demo"&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;//JSvar vm = new Vue(&#123; el: '#demo', data: &#123; firstName: 'Foo', lastName: 'Bar' &#125;, computed: &#123; fullName: function () &#123; return this.firstName + ' ' + this.lastName &#125; &#125;&#125;) Vue 中我们不需要在 template 里面直接计算undefined undefined，因为在模版中放入太多声明式的逻辑会让模板本身过重，尤其当在页面中使用大量复杂的逻辑表达式处理数据时，会对页面的可维护性造成很大的影响，而computed的设计初衷也正是用于解决此类问题。 与侦听器watch使用场景的对比 watch选项允许我们执行异步操作（访问一个API）或高消耗性能的操作，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态 computed 是计算一个新的属性，并将该属性挂载到 vm（Vue 实例）上，而 watch 是监听已经存在且已挂载到 vm 上的数据，所以用 watch 同样可以监听 computed 计算属性的变化（其它还有 data、props） computed 本质是一个惰性求值的观察者，具有缓存性，只有当依赖变化后，第一次访问 computed 属性，才会计算新的值，而 watch 则是当数据发生变化便会调用执行函数 computed 适用一个数据被多个数据影响，而 watch 适用一个数据影响多个数据]]></content>
