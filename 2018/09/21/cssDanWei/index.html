@@ -132,18 +132,18 @@
 
 
 
-  <meta name="description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。">
+  <meta name="description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。  emem相对单位，相对于当前对象内文本的字体尺寸。em的值是不固定的，是相对于父元素的属性而计算的。如当前对行内文本的字体尺寸未被设置，则相对于浏览器的默认字体尺寸，默认字体为16px。所有未经调整的浏览器都符合：1em= 16px,但为了便于px与em之间的换算，在CSS中设置font-size">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS中的rem,em与px区别">
 <meta property="og:url" content="http://moseley.cn/2018/09/21/cssDanWei/index.html">
 <meta property="og:site_name" content="Naxzer">
-<meta property="og:description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。">
+<meta property="og:description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。  emem相对单位，相对于当前对象内文本的字体尺寸。em的值是不固定的，是相对于父元素的属性而计算的。如当前对行内文本的字体尺寸未被设置，则相对于浏览器的默认字体尺寸，默认字体为16px。所有未经调整的浏览器都符合：1em= 16px,但为了便于px与em之间的换算，在CSS中设置font-size">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T09:46:20.621Z">
+<meta property="og:updated_time" content="2018-09-28T09:06:05.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS中的rem,em与px区别">
-<meta name="twitter:description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。">
+<meta name="twitter:description" content="pxpx像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。  emem相对单位，相对于当前对象内文本的字体尺寸。em的值是不固定的，是相对于父元素的属性而计算的。如当前对行内文本的字体尺寸未被设置，则相对于浏览器的默认字体尺寸，默认字体为16px。所有未经调整的浏览器都符合：1em= 16px,但为了便于px与em之间的换算，在CSS中设置font-size">
 
 
 
@@ -397,12 +397,24 @@
                 
               
 
-              <time title="创建时间：2018-09-21 17:25:17 / 修改时间：17:46:20" itemprop="dateCreated datePublished" datetime="2018-09-21T17:25:17+08:00">2018-09-21</time>
+              <time title="创建时间：2018-09-21 17:25:17" itemprop="dateCreated datePublished" datetime="2018-09-21T17:25:17+08:00">2018-09-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-28 17:06:05" itemprop="dateModified" datetime="2018-09-28T17:06:05+08:00">2018-09-28</time>
               
             
           </span>
@@ -463,9 +475,10 @@
       
 
       
-        <h4 id="px"><a href="#px" class="headerlink" title="px"></a>px</h4><p>px像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。<br><a id="more"></a></p>
+        <h4 id="px"><a href="#px" class="headerlink" title="px"></a>px</h4><p>px像素，绝对单位，页面按精确像素展示。但当用户改变了浏览器的缩放，会使Web页面布局被打破。</p>
 <hr>
 <h4 id="em"><a href="#em" class="headerlink" title="em"></a>em</h4><p>em相对单位，相对于当前对象内文本的字体尺寸。<br>em的值是不固定的，是相对于<strong>父元素</strong>的属性而计算的。<br>如当前对行内文本的字体尺寸未被设置，则相对于浏览器的默认字体尺寸，默认字体为<code>16px</code>。<br>所有未经调整的浏览器都符合：<code>1em= 16px</code>,但为了便于<code>px</code>与<code>em</code>之间的换算，在CSS中设置<code>font-size:62.5%</code>，即<code>1em=16px*62.5%=10px</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">62.5%</span> // font-size:<span class="number">10px</span> <span class="number">1em</span>:<span class="number">10px</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.2em</span> //font-size: <span class="number">10</span> *<span class="number">1.2</span> =<span class="number">12px</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1.2em</span> //font-size= <span class="number">12</span>*<span class="number">1.2</span>=<span class="number">14.4px</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <hr>
 <h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><p>rem也是相对单位，与em不同的是，它是相对于HTML页面的<strong>根元素</strong>。<br>通过rem，既可以做到只修改根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">16px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">1rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
