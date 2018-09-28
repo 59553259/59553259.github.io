@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[JS三元表达式应注意的一个细节]]></title>
     <url>%2F2018%2F09%2F28%2FsanYuan%2F</url>
-    <content type="text"><![CDATA[众所周知，三元表达式跟if...else的作用大致相同，但在代码量上比if…else语句更简洁一些。最近，在写项目发现一个bug，经过调试发现是由三元表达式的使用不当所引起的。三元表示式的用法为：条件 ? 真结果 : 假结果然而当条件为0时，会返回假结果。例如：123var a = 5;a = a ? a="true" : a="false";输出为："true" 再看下面一个例子：123var a = 0;a = a ? a="true" : a="false";输出为："false" 分析下原因，这是由于0在js中表示的为false,于是便取了假结果，对此将代码改为：123var a = 0;a = (a!=null||a!=undefined) ? a="true" : a="false";输出为："true"]]></content>
+    <content type="text"><![CDATA[众所周知，三元表达式跟if...else的作用大致相同，但在代码量上比if…else语句更简洁一些。最近，在写项目发现一个bug，经过调试发现是由三元表达式的使用不当所引起的。三元表示式的用法为：条件 ? 真结果 : 假结果然而当条件为0时，会返回假结果。例如：123var a = 5;a ? a="true" : a="false";输出为："true" 再看下面一个例子：123var a = 0;a ? a="true" : a="false";输出为："false" 分析下原因，这是由于0在js中表示的为false,于是便取了假结果，对此将代码改为：123var a = 0;(a!=null||a!=undefined) ? a="true" : a="false";输出为："true"]]></content>
       <categories>
         <category>JS</category>
       </categories>
